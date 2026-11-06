@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2026-11-06
+
+### Modern Studio Dashboard & UI Revolution
+- **Studio Command Center (Home Screen):**
+  - Completely transformed the landing page from a blank dropzone into a modern, executive Studio Command Center.
+  - **Live Project Health Bar:** Real-time pulse indicator, overall health status badge (`Optimal`, `Review`, `Issues Found`), and interactive metric pills (`Comps`, `Assets`, `Offline`, `Unused`).
+  - **Quick Action Tools Hub:** 6 high-visibility glowing action cards providing 1-click access to *Asset & Font Auditor*, *Comp Tree & Batch Renamer*, *FFmpeg Proxy Studio*, *Deep Dependency & Orphan Cleaner*, *Auto-Relink Media*, and *Collect & Archive*.
+  - **Sleek Ingest & Dropzone:** Integrated modern dropzone that balances aesthetics and utility.
+  - **Direct Project Sort Strip:** Instant 1-click sort buttons (`Sort AE Bins`, `Sort OS & AE`, `Sort Comps`) directly on the home hub without requiring tab switching.
+- **Architectural Bin Structure Preview in Sort Tab:**
+  - Added live preview card displaying active folder preset mappings (`Video`, `Images`, `Audio`, `Comps`, `Sequences`, `Solids`) with a direct shortcut to edit in Settings.
+- **Smart Collapsible Activity Log Drawer:**
+  - Redesigned the Activity Log from a permanent space-wasting box into a compact, responsive 26px status footer that displays real-time activity previews and auto-expands on error, saving 80+ vertical pixels.
+- **Enhanced Internationalization (i18n):**
+  - Added full Arabic and English localizations for all new dashboard elements, health states, cards, and tooltips (100% coverage across 261 tagged elements).
+
 ## [2.0.0] - 2026-11-06
 
 ### Major Overhaul & Architecture Polish

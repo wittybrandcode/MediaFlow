@@ -65,6 +65,13 @@ var LogPanel = (function () {
             logElement.appendChild(entry);
             logElement.scrollTop = logElement.scrollHeight;
 
+            // Update collapsed header preview
+            var previewEl = document.getElementById('log-header-preview');
+            if (previewEl) {
+                previewEl.className = 'log-header-preview ' + type;
+                previewEl.innerHTML = icons[type] + ' <span>' + message + '</span>';
+            }
+
             // Auto expand log if it's an error
             if (type === 'error') {
                 var logContainer = document.getElementById('log-container');

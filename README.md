@@ -11,7 +11,13 @@
 
 ## 🌟 Key Features
 
-### 📥 1. Smart Ingest & Drag-and-Drop
+### 🚀 1. Modern Studio Command Center (Dashboard)
+- **Live Project Health Bar:** Real-time pulse indicator, overall health status badge (`Optimal`, `Review`, `Issues Found`), and interactive metric pills (`Comps`, `Assets`, `Offline`, `Unused`).
+- **Quick Action Tools Hub:** 6 high-visibility glowing action cards providing 1-click access to *Asset & Font Auditor*, *Comp Tree & Batch Renamer*, *FFmpeg Proxy Studio*, *Deep Dependency & Orphan Cleaner*, *Auto-Relink Media*, and *Collect & Archive*.
+- **Integrated Smart Ingest & Sort Strip:** Sleek dropzone with instant 1-click sort buttons (`Sort AE Bins`, `Sort OS & AE`, `Sort Comps`) without tab switching.
+- **Collapsible Activity Drawer:** Compact, non-intrusive 26px status footer that displays real-time activity previews and auto-expands on errors.
+
+### 📥 2. Smart Ingest & Drag-and-Drop
 - **Two Flexible Ingest Modes:**
   - **Copy to Project:** Automatically copies imported media into organized project directories (`_media/` or custom structure).
   - **Link Original:** Ingests media directly from source location without duplicating physical files.

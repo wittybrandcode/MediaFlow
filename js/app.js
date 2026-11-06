@@ -199,14 +199,121 @@
             }
         });
 
-        // Bind Sort tab buttons
-        bindSortTabButtons();
+        // Bind Studio Dashboard & Sort tab buttons
+        bindDashboardAndSortButtons();
     }
 
     /**
-     * Bind sort tab button clicks
+     * Bind Studio Dashboard & Sort tab button clicks
      */
-    function bindSortTabButtons() {
+    function bindDashboardAndSortButtons() {
+        // Dashboard Quick Tools
+        var dashAuditorBtn = document.getElementById('dash-btn-auditor');
+        if (dashAuditorBtn) {
+            dashAuditorBtn.addEventListener('click', function () {
+                if (typeof SmartController !== 'undefined') SmartController.runAuditor();
+            });
+        }
+
+        var dashCompTreeBtn = document.getElementById('dash-btn-comptree');
+        if (dashCompTreeBtn) {
+            dashCompTreeBtn.addEventListener('click', function () {
+                if (typeof TabManager !== 'undefined') TabManager.switchTab('comptree');
+            });
+        }
+
+        var dashProxyBtn = document.getElementById('dash-btn-proxy');
+        if (dashProxyBtn) {
+            dashProxyBtn.addEventListener('click', function () {
+                if (typeof ProxyController !== 'undefined') ProxyController.openManager();
+            });
+        }
+
+        var dashOrphansBtn = document.getElementById('dash-btn-orphans');
+        if (dashOrphansBtn) {
+            dashOrphansBtn.addEventListener('click', function () {
+                if (typeof SmartController !== 'undefined') SmartController.runOrphanScan();
+            });
+        }
+
+        var dashRelinkBtn = document.getElementById('dash-btn-relink');
+        if (dashRelinkBtn) {
+            dashRelinkBtn.addEventListener('click', function () {
+                if (typeof TabManager !== 'undefined') TabManager.switchTab('smart');
+            });
+        }
+
+        var dashCollectBtn = document.getElementById('dash-btn-collect');
+        if (dashCollectBtn) {
+            dashCollectBtn.addEventListener('click', function () {
+                if (typeof TabManager !== 'undefined') TabManager.switchTab('smart');
+            });
+        }
+
+        // Dashboard Metric Pills
+        var pillComps = document.getElementById('dash-pill-comps');
+        if (pillComps) {
+            pillComps.addEventListener('click', function () {
+                if (typeof TabManager !== 'undefined') TabManager.switchTab('comptree');
+            });
+        }
+
+        var pillTotal = document.getElementById('dash-pill-total');
+        if (pillTotal) {
+            pillTotal.addEventListener('click', function () {
+                if (typeof TabManager !== 'undefined') TabManager.switchTab('stats');
+            });
+        }
+
+        var pillMissing = document.getElementById('dash-pill-missing');
+        if (pillMissing) {
+            pillMissing.addEventListener('click', function () {
+                if (typeof TabManager !== 'undefined') TabManager.switchTab('stats');
+            });
+        }
+
+        var pillUnused = document.getElementById('dash-pill-unused');
+        if (pillUnused) {
+            pillUnused.addEventListener('click', function () {
+                if (typeof TabManager !== 'undefined') TabManager.switchTab('smart');
+            });
+        }
+
+        // Dashboard Quick Sort Strip Buttons
+        var dashSortAe = document.getElementById('dash-sort-ae');
+        if (dashSortAe) {
+            dashSortAe.addEventListener('click', function () {
+                EventBus.emit(Events.AUTO_ORGANIZE_CLICKED, 'ae-only');
+            });
+        }
+
+        var dashSortOsAe = document.getElementById('dash-sort-os-ae');
+        if (dashSortOsAe) {
+            dashSortOsAe.addEventListener('click', function () {
+                EventBus.emit(Events.AUTO_ORGANIZE_CLICKED, 'os-ae');
+            });
+        }
+
+        var dashSortComps = document.getElementById('dash-sort-comps');
+        if (dashSortComps) {
+            dashSortComps.addEventListener('click', function () {
+                EventBus.emit(Events.SORT_COMPS_CLICKED);
+            });
+        }
+
+        // Sort Tab Preset Button
+        var sortEditPresetsBtn = document.getElementById('sort-btn-edit-presets');
+        if (sortEditPresetsBtn) {
+            sortEditPresetsBtn.addEventListener('click', function () {
+                if (typeof TabManager !== 'undefined') {
+                    TabManager.switchTab('settings');
+                    var orgSubTab = document.querySelector('.settings-sub-tab[data-tab="organization"]');
+                    if (orgSubTab) orgSubTab.click();
+                }
+            });
+        }
+
+        // Original Sort tab buttons
         var sortAeBtn = document.getElementById('sort-ae-only');
         var sortOsAeBtn = document.getElementById('sort-os-ae');
         var sortCompsBtn = document.getElementById('sort-comps');
@@ -433,6 +540,41 @@
                 // Render advanced health metrics
                 if (typeof UIController.renderProjectHealth === 'function') {
                     UIController.renderProjectHealth(stats);
+                }
+
+                // Update Studio Dashboard Health Banner
+                updateStatValue('dash-stat-comps', stats.comp || 0);
+                updateStatValue('dash-stat-total', stats.total || 0);
+                updateStatValue('dash-stat-missing', stats.missing || 0);
+                updateStatValue('dash-stat-unused', unusedTotal);
+
+                var dashHealthBadge = document.getElementById('dash-health-badge');
+                var dashHealthText = document.getElementById('dash-health-text');
+                if (dashHealthBadge && dashHealthText) {
+                    var _t = function(k, fb) { return (typeof I18N !== 'undefined') ? I18N.t(k, null, fb) : fb; };
+                    if (stats.missing > 0) {
+                        dashHealthBadge.className = 'health-status-badge critical';
+                        dashHealthText.textContent = _t('dashboard.critical', null, 'Issues Found');
+                    } else if (unusedTotal > 5) {
+                        dashHealthBadge.className = 'health-status-badge warning';
+                        dashHealthText.textContent = _t('dashboard.needsAttention', null, 'Review');
+                    } else {
+                        dashHealthBadge.className = 'health-status-badge healthy';
+                        dashHealthText.textContent = _t('dashboard.healthy', null, 'Optimal');
+                    }
+                }
+
+                // Update Sort Tab Preset Bins preview
+                if (typeof FolderPresets !== 'undefined') {
+                    var names = FolderPresets.getActiveFolderNames();
+                    if (names) {
+                        updateStatValue('sort-bin-video', names.video || '_media/Video');
+                        updateStatValue('sort-bin-image', names.image || '_media/Images');
+                        updateStatValue('sort-bin-audio', names.audio || '_media/Audio');
+                        updateStatValue('sort-bin-comps', names.comps || 'Compositions');
+                        updateStatValue('sort-bin-sequence', names.sequence || '_media/Sequences');
+                        updateStatValue('sort-bin-solid', names.solid || '_media/Solids');
+                    }
                 }
             }
         } catch (e) {

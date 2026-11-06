@@ -52,22 +52,162 @@
         <!-- Tab Content Area -->
         <div class="tab-content" id="tab-content">
 
-            <!-- ================== TAB 1: IMPORT ================== -->
+            <!-- ================== TAB 1: STUDIO HUB & INGEST ================== -->
             <div class="tab-pane active" id="pane-import">
-                <!-- Drop Zone (acts as browse button too) -->
-                <div id="dropzone" class="dropzone tooltipped" data-tooltip="Drag & Drop files or Click to Browse" data-i18n-tooltip="ingest.dropzoneTooltip">
-                    <div class="dropzone-content">
-                        <div class="dropzone-icon"><i class="fa-solid fa-photo-film"></i></div>
-                        <div class="dropzone-text" data-i18n="ingest.dropTitle">Drop media here</div>
-                        <div class="dropzone-subtext" data-i18n="ingest.dropSubtitle">or click to browse</div>
-                    </div>
-                    <div id="file-counter" class="file-counter" style="display: none;">
-                        <span id="file-count">0</span>
-                    </div>
-                </div>
+                <div class="studio-hub">
 
-                <!-- Hidden Browse Button (triggered by dropzone click) -->
-                <button id="browse-btn" style="display: none;"></button>
+                    <!-- Project Health & Diagnostics Bar -->
+                    <div class="studio-health-banner" id="studio-health-banner">
+                        <div class="health-banner-top">
+                            <div class="health-banner-title">
+                                <i class="fa-solid fa-heart-pulse health-pulse-icon"></i>
+                                <span data-i18n="dashboard.projectHealthTitle">Project Health</span>
+                            </div>
+                            <div class="health-status-badge healthy" id="dash-health-badge">
+                                <span class="status-dot"></span>
+                                <span id="dash-health-text" data-i18n="dashboard.healthy">Optimal</span>
+                            </div>
+                        </div>
+                        <div class="dash-quick-metrics">
+                            <div class="dash-metric-pill tooltipped tooltip-bottom" id="dash-pill-comps" data-tooltip="Compositions" data-i18n-tooltip="stats.tipComps">
+                                <i class="fa-solid fa-layer-group" style="color: #ba68c8;"></i>
+                                <span class="metric-val" id="dash-stat-comps">0</span>
+                                <span class="metric-lbl" data-i18n="stats.labelComps">Comps</span>
+                            </div>
+                            <div class="dash-metric-pill tooltipped tooltip-bottom" id="dash-pill-total" data-tooltip="Total Project Items" data-i18n-tooltip="stats.tipTotal">
+                                <i class="fa-solid fa-boxes-stacked" style="color: #00bcd4;"></i>
+                                <span class="metric-val" id="dash-stat-total">0</span>
+                                <span class="metric-lbl" data-i18n="stats.labelTotal">Assets</span>
+                            </div>
+                            <div class="dash-metric-pill tooltipped tooltip-bottom" id="dash-pill-missing" data-tooltip="Missing / Offline Assets" data-i18n-tooltip="stats.tipOffline">
+                                <i class="fa-solid fa-triangle-exclamation" style="color: #ff9800;"></i>
+                                <span class="metric-val" id="dash-stat-missing">0</span>
+                                <span class="metric-lbl" data-i18n="stats.labelOffline">Offline</span>
+                            </div>
+                            <div class="dash-metric-pill tooltipped tooltip-bottom" id="dash-pill-unused" data-tooltip="Unused Assets" data-i18n-tooltip="stats.sectionUnused">
+                                <i class="fa-solid fa-box-archive" style="color: #4CAF50;"></i>
+                                <span class="metric-val" id="dash-stat-unused">0</span>
+                                <span class="metric-lbl" data-i18n="stats.sectionUnused">Unused</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Action Tools Hub (Superpowers) -->
+                    <div class="studio-section-header">
+                        <span class="studio-section-title"><i class="fa-solid fa-bolt-lightning" style="color: var(--accent);"></i> <span data-i18n="dashboard.quickActions">Quick Action Tools</span></span>
+                    </div>
+
+                    <div class="quick-tools-grid">
+                        <!-- Tool 1: Asset & Font Auditor -->
+                        <div class="studio-card" id="card-tool-auditor">
+                            <div class="studio-card-icon auditor-color"><i class="fa-solid fa-microscope"></i></div>
+                            <div class="studio-card-info">
+                                <div class="studio-card-title" data-i18n="dashboard.cardAuditorTitle">Asset & Font Auditor</div>
+                                <div class="studio-card-desc" data-i18n="dashboard.cardAuditorDesc">Scan missing effects & fonts</div>
+                            </div>
+                            <button class="studio-card-btn tooltipped tooltip-bottom" id="dash-btn-auditor" data-tooltip="Scan Project Assets" data-i18n-tooltip="smart.btnRunAuditor">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            </button>
+                        </div>
+
+                        <!-- Tool 2: Comp Tree & Batch Renamer -->
+                        <div class="studio-card" id="card-tool-comptree">
+                            <div class="studio-card-icon tree-color"><i class="fa-solid fa-sitemap"></i></div>
+                            <div class="studio-card-info">
+                                <div class="studio-card-title" data-i18n="dashboard.cardTreeTitle">Comp Tree & Renamer</div>
+                                <div class="studio-card-desc" data-i18n="dashboard.cardTreeDesc">Comp hierarchy & bulk rename</div>
+                            </div>
+                            <button class="studio-card-btn tooltipped tooltip-bottom" id="dash-btn-comptree" data-tooltip="Open Composition Tree" data-i18n-tooltip="tabs.compTreeTooltip">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                        </div>
+
+                        <!-- Tool 3: Proxy Studio -->
+                        <div class="studio-card" id="card-tool-proxy">
+                            <div class="studio-card-icon proxy-color"><i class="fa-solid fa-bolt"></i></div>
+                            <div class="studio-card-info">
+                                <div class="studio-card-title" data-i18n="dashboard.cardProxyTitle">Proxy Studio</div>
+                                <div class="studio-card-desc" data-i18n="dashboard.cardProxyDesc">ProRes & H.264 proxy engine</div>
+                            </div>
+                            <button class="studio-card-btn tooltipped tooltip-bottom" id="dash-btn-proxy" data-tooltip="Open Proxy Studio" data-i18n-tooltip="smart.btnOpenProxyManager">
+                                <i class="fa-solid fa-film"></i>
+                            </button>
+                        </div>
+
+                        <!-- Tool 4: Orphan Cleaner -->
+                        <div class="studio-card" id="card-tool-orphans">
+                            <div class="studio-card-icon orphan-color"><i class="fa-solid fa-trash-can"></i></div>
+                            <div class="studio-card-info">
+                                <div class="studio-card-title" data-i18n="dashboard.cardOrphanTitle">Orphan Cleaner</div>
+                                <div class="studio-card-desc" data-i18n="dashboard.cardOrphanDesc">Clean unreferenced pre-comps</div>
+                            </div>
+                            <button class="studio-card-btn tooltipped tooltip-bottom" id="dash-btn-orphans" data-tooltip="Analyze Orphans" data-i18n-tooltip="smart.btnRunOrphanScan">
+                                <i class="fa-solid fa-broom"></i>
+                            </button>
+                        </div>
+
+                        <!-- Tool 5: Smart Relink -->
+                        <div class="studio-card" id="card-tool-relink">
+                            <div class="studio-card-icon relink-color"><i class="fa-solid fa-link"></i></div>
+                            <div class="studio-card-info">
+                                <div class="studio-card-title" data-i18n="dashboard.cardRelinkTitle">Auto-Relink Media</div>
+                                <div class="studio-card-desc" data-i18n="dashboard.cardRelinkDesc">Reconnect offline footage</div>
+                            </div>
+                            <button class="studio-card-btn tooltipped tooltip-bottom" id="dash-btn-relink" data-tooltip="Auto Relink Media" data-i18n-tooltip="smart.btnRunRelink">
+                                <i class="fa-solid fa-arrows-rotate"></i>
+                            </button>
+                        </div>
+
+                        <!-- Tool 6: Collect & Archive -->
+                        <div class="studio-card" id="card-tool-collect">
+                            <div class="studio-card-icon collect-color"><i class="fa-solid fa-boxes-packing"></i></div>
+                            <div class="studio-card-info">
+                                <div class="studio-card-title" data-i18n="dashboard.cardCollectTitle">Collect & Archive</div>
+                                <div class="studio-card-desc" data-i18n="dashboard.cardCollectDesc">Bundle active assets & save AEP</div>
+                            </div>
+                            <button class="studio-card-btn tooltipped tooltip-bottom" id="dash-btn-collect" data-tooltip="Collect Project Assets" data-i18n-tooltip="smart.btnRunCollect">
+                                <i class="fa-solid fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Smart Ingest & Organization Section -->
+                    <div class="studio-section-header" style="margin-top: 6px;">
+                        <span class="studio-section-title"><i class="fa-solid fa-cloud-arrow-up" style="color: #4CAF50;"></i> <span data-i18n="dashboard.quickSortTitle">Smart Ingest & Organization</span></span>
+                    </div>
+
+                    <!-- Drop Zone -->
+                    <div id="dropzone" class="dropzone studio-dropzone tooltipped" data-tooltip="Drag & Drop files or Click to Browse" data-i18n-tooltip="ingest.dropzoneTooltip">
+                        <div class="dropzone-content">
+                            <div class="dropzone-icon"><i class="fa-solid fa-photo-film"></i></div>
+                            <div class="dropzone-text" data-i18n="ingest.dropTitle">Drop media here</div>
+                            <div class="dropzone-subtext" data-i18n="ingest.dropSubtitle">or click to browse</div>
+                        </div>
+                        <div id="file-counter" class="file-counter" style="display: none;">
+                            <span id="file-count">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Hidden Browse Button (triggered by dropzone click) -->
+                    <button id="browse-btn" style="display: none;"></button>
+
+                    <!-- Instant Project Sort Action Strip -->
+                    <div class="quick-sort-strip">
+                        <button class="quick-sort-btn tooltipped tooltip-bottom" id="dash-sort-ae" data-tooltip="Sort inside After Effects bins only" data-i18n-tooltip="sort.sortAeOnlyTooltip">
+                            <i class="fa-solid fa-clapperboard"></i>
+                            <span data-i18n="dashboard.sortAeBtn">Sort AE Bins</span>
+                        </button>
+                        <button class="quick-sort-btn tooltipped tooltip-bottom" id="dash-sort-os-ae" data-tooltip="Move on OS and sort inside After Effects" data-i18n-tooltip="sort.sortOsAeTooltip">
+                            <i class="fa-solid fa-folder-tree"></i>
+                            <span data-i18n="dashboard.sortOsAeBtn">Sort OS & AE</span>
+                        </button>
+                        <button class="quick-sort-btn primary tooltipped tooltip-bottom" id="dash-sort-comps" data-tooltip="Organize Compositions Hierarchy" data-i18n-tooltip="sort.sortCompsTooltip">
+                            <i class="fa-solid fa-diagram-project"></i>
+                            <span data-i18n="dashboard.sortCompsBtn">Sort Comps</span>
+                        </button>
+                    </div>
+
+                </div>
             </div>
 
             <!-- ================== TAB 2: SORT ================== -->
@@ -77,10 +217,10 @@
                     <div class="toolbar-group">
                         <div class="toolbar-label" data-i18n="sort.footageSortLabel">Footage Sort</div>
                         <div class="toolbar-buttons">
-                            <button class="square-btn tooltipped" id="sort-ae-only" data-action="sort-ae" data-tooltip="Sort inside After Effects bins only" data-i18n-tooltip="sort.sortAeOnlyTooltip">
+                            <button class="square-btn tooltipped tooltip-bottom" id="sort-ae-only" data-action="sort-ae" data-tooltip="Sort inside After Effects bins only" data-i18n-tooltip="sort.sortAeOnlyTooltip">
                                 <i class="fa-solid fa-clapperboard"></i>
                             </button>
-                            <button class="square-btn tooltipped" id="sort-os-ae" data-action="sort-os-ae" data-tooltip="Move on OS and sort inside After Effects" data-i18n-tooltip="sort.sortOsAeTooltip">
+                            <button class="square-btn tooltipped tooltip-bottom" id="sort-os-ae" data-action="sort-os-ae" data-tooltip="Move on OS and sort inside After Effects" data-i18n-tooltip="sort.sortOsAeTooltip">
                                 <i class="fa-solid fa-folder-tree"></i>
                             </button>
                         </div>
@@ -89,16 +229,35 @@
                     <div class="toolbar-group">
                         <div class="toolbar-label" data-i18n="sort.compsLabel">Compositions</div>
                         <div class="toolbar-buttons">
-                            <button class="square-btn primary tooltipped" id="sort-comps" data-action="sort-comps" data-tooltip="Organize Compositions Hierarchy" data-i18n-tooltip="sort.sortCompsTooltip">
+                            <button class="square-btn primary tooltipped tooltip-bottom" id="sort-comps" data-action="sort-comps" data-tooltip="Organize Compositions Hierarchy" data-i18n-tooltip="sort.sortCompsTooltip">
                                 <i class="fa-solid fa-diagram-project"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                
-                <div class="empty-state">
-                    <i class="fa-solid fa-folder-tree empty-state-icon"></i>
-                    <div class="empty-state-text" data-i18n="sort.emptyState">Use buttons above to sort your project</div>
+
+                <!-- Live Preset Organization Architecture Preview -->
+                <div class="sort-preset-preview-card">
+                    <div class="sort-preset-header">
+                        <div class="sort-preset-title">
+                            <i class="fa-solid fa-folder-tree" style="color: var(--accent);"></i>
+                            <span data-i18n="dashboard.presetStructureTitle">Active Bin Organization Structure</span>
+                        </div>
+                        <button class="settings-btn secondary" id="sort-btn-edit-presets" style="font-size: 10px; padding: 3px 8px;">
+                            <i class="fa-solid fa-gear"></i> <span data-i18n="dashboard.editInSettings">Edit in Settings</span>
+                        </button>
+                    </div>
+                    <p style="font-size: 11px; color: var(--text-secondary); margin: 6px 0 10px;" data-i18n="dashboard.presetStructureDesc">
+                        Imported and unorganized assets will be routed to these bins:
+                    </p>
+                    <div class="sort-bins-grid" id="sort-active-bins-grid">
+                        <div class="sort-bin-pill"><i class="fa-solid fa-film" style="color: #00AAFF;"></i> <span>Video:</span> <strong id="sort-bin-video">_media/Video</strong></div>
+                        <div class="sort-bin-pill"><i class="fa-solid fa-image" style="color: #4CAF50;"></i> <span>Images:</span> <strong id="sort-bin-image">_media/Images</strong></div>
+                        <div class="sort-bin-pill"><i class="fa-solid fa-music" style="color: #FF9800;"></i> <span>Audio:</span> <strong id="sort-bin-audio">_media/Audio</strong></div>
+                        <div class="sort-bin-pill"><i class="fa-solid fa-diagram-project" style="color: #9C27B0;"></i> <span>Comps:</span> <strong id="sort-bin-comps">Compositions</strong></div>
+                        <div class="sort-bin-pill"><i class="fa-solid fa-layer-group" style="color: #00BCD4;"></i> <span>Sequences:</span> <strong id="sort-bin-sequence">_media/Sequences</strong></div>
+                        <div class="sort-bin-pill"><i class="fa-solid fa-shapes" style="color: #E91E63;"></i> <span>Solids:</span> <strong id="sort-bin-solid">_media/Solids</strong></div>
+                    </div>
                 </div>
 
             </div>
@@ -688,10 +847,11 @@
     </div>
 
     <!-- Status Log (always visible) -->
-    <div class="log-container" id="log-container">
+    <div class="log-container collapsed" id="log-container">
         <div class="log-header" id="log-header">
-            <span><i class="fa-solid fa-terminal"></i> <span data-i18n="logs.activityLog">Activity Log</span></span>
-            <i class="fa-solid fa-chevron-down log-toggle-icon"></i>
+            <span class="log-header-left"><i class="fa-solid fa-terminal"></i> <span data-i18n="logs.activityLog">Activity Log</span></span>
+            <span class="log-header-preview" id="log-header-preview"><i class="fa-solid fa-circle-info"></i> <span data-i18n="logs.readyPrompt">Ready. Drop files to import.</span></span>
+            <i class="fa-solid fa-chevron-up log-toggle-icon"></i>
         </div>
         <div id="log" class="log">
             <div class="log-entry info"><i class="fa-solid fa-circle-info"></i> <span data-i18n="logs.readyPrompt">Ready. Drop files to import.</span></div>
