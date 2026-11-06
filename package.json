@@ -1,0 +1,23 @@
+{
+  "name": "mediaflow",
+  "version": "2.0.0",
+  "description": "Smart Media Management & Studio Automation Extension for Adobe After Effects",
+  "main": "index.html",
+  "author": "Tawfik Mostefaoui",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wittybrandcode/MediaFlow.git"
+  },
+  "keywords": [
+    "adobe",
+    "after-effects",
+    "cep",
+    "extension",
+    "media-management",
+    "render-queue",
+    "proxy",
+    "batch-renamer",
+    "i18n"
+  ]
+}

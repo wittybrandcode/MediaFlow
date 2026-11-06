@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest Version="9.0" ExtensionBundleId="com.mediaflow.bundle" ExtensionBundleVersion="1.0.0" ExtensionBundleName="MediaFlow">
+    <ExtensionList>
+        <Extension Id="com.mediaflow.panel" Version="1.0.0"/>
+    </ExtensionList>
+    
+    <ExecutionEnvironment>
+        <HostList>
+            <!-- After Effects CC 2019 (16.0) and later -->
+            <Host Name="AEFT" Version="[16.0,99.9]"/>
+        </HostList>
+        <LocaleList>
+            <Locale Code="All"/>
+        </LocaleList>
+        <RequiredRuntimeList>
+            <RequiredRuntime Name="CSXS" Version="9.0"/>
+        </RequiredRuntimeList>
+    </ExecutionEnvironment>
+    
+    <DispatchInfoList>
+        <Extension Id="com.mediaflow.panel">
+            <DispatchInfo>
+                <Resources>
+                    <MainPath>./index.html</MainPath>
+                    <ScriptPath>./jsx/hostscript.jsx</ScriptPath>
+                    <CEFCommandLine>
+                        <Parameter>--enable-nodejs</Parameter>
+                        <Parameter>--mixed-context</Parameter>
+                    </CEFCommandLine>
+                </Resources>
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible>
+                </Lifecycle>
+                <UI>
+                    <Type>Panel</Type>
+                    <Menu>MediaFlow</Menu>
+                    <Geometry>
+                        <Size>
+                            <Height>500</Height>
+                            <Width>300</Width>
+                        </Size>
+                        <MinSize>
+                            <Height>350</Height>
+                            <Width>250</Width>
+                        </MinSize>
+                        <MaxSize>
+                            <Height>2500</Height>
+                            <Width>2500</Width>
+                        </MaxSize>
+                    </Geometry>
+                    <Icons>
+                        <Icon Type="Normal">./icons/icon.svg</Icon>
+                        <Icon Type="DarkNormal">./icons/icon_dark.svg</Icon>
+                    </Icons>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+    </DispatchInfoList>
+</ExtensionManifest>
