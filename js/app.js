@@ -38,6 +38,13 @@
         // Initialize UI Controller
         try { UIController.initialize(); } catch (e) { initErrors.push('UIController: ' + e.message); }
 
+        // Initialize Lucide Icons (OpenGeo Aesthetic)
+        try {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        } catch (e) { initErrors.push('Lucide: ' + e.message); }
+
         // Initialize Smart Controller
         try {
             if (typeof SmartController !== 'undefined') { SmartController.init(); }
@@ -196,6 +203,15 @@
         EventBus.on(Events.TAB_CHANGED, function (data) {
             if (data.tab === 'stats') {
                 handleStatsRefresh();
+            }
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+
+        EventBus.on(Events.LANGUAGE_CHANGED, function () {
+            if (typeof lucide !== 'undefined') {
+                setTimeout(function () { lucide.createIcons(); }, 50);
             }
         });
 

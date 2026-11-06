@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MediaFlow</title>
     <link rel="stylesheet" href="libs/fontawesome/css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css?v=3" />
+    <link rel="stylesheet" href="css/style.css?v=4" />
+    <script src="libs/lucide.min.js"></script>
 </head>
 
 <body>
@@ -18,9 +19,9 @@
                 <!-- Language Dropdown (i18n) -->
                 <div class="header-lang-dropdown-container">
                     <button class="lang-dropdown-btn tooltipped tooltip-bottom" id="btn-lang-dropdown" data-i18n-tooltip="header.switchLanguage" data-tooltip="Language / اللغة">
-                        <i class="fa-solid fa-globe"></i>
+                        <i data-lucide="globe"></i>
                         <span id="header-lang-code">EN</span>
-                        <i class="fa-solid fa-chevron-down" style="font-size: 8px; opacity: 0.7;"></i>
+                        <i data-lucide="chevron-down" style="font-size: 8px; opacity: 0.7;"></i>
                     </button>
                     <div class="lang-dropdown-menu" id="header-lang-menu">
                         <!-- Populated dynamically by LanguageSwitcher -->
@@ -29,22 +30,22 @@
             </div>
             <nav class="tab-nav" id="tab-nav">
                 <button class="tab-btn active tooltipped tooltip-bottom" data-tab="import" data-tooltip="Import Media" data-i18n-tooltip="tabs.importTooltip">
-                    <i class="fa-solid fa-download"></i>
+                    <i data-lucide="download"></i>
                 </button>
                 <button class="tab-btn tooltipped tooltip-bottom" data-tab="sort" data-tooltip="Sort & Organize" data-i18n-tooltip="tabs.sortTooltip">
-                    <i class="fa-solid fa-layer-group"></i>
+                    <i data-lucide="layers"></i>
                 </button>
                 <button class="tab-btn tooltipped tooltip-bottom" data-tab="stats" data-tooltip="Project Statistics" data-i18n-tooltip="tabs.statsTooltip">
-                    <i class="fa-solid fa-chart-pie"></i>
+                    <i data-lucide="pie-chart"></i>
                 </button>
                 <button class="tab-btn tooltipped tooltip-bottom" data-tab="smart" data-tooltip="Smart Actions" data-i18n-tooltip="tabs.smartTooltip">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <i data-lucide="wand-2"></i>
                 </button>
                 <button class="tab-btn tooltipped tooltip-bottom" data-tab="comptree" data-tooltip="Comp Tree" data-i18n-tooltip="tabs.compTreeTooltip">
-                    <i class="fa-solid fa-sitemap"></i>
+                    <i data-lucide="folder-tree"></i>
                 </button>
                 <button class="tab-btn tooltipped tooltip-bottom" data-tab="settings" data-tooltip="Global Settings" data-i18n-tooltip="tabs.settingsTooltip">
-                    <i class="fa-solid fa-gear"></i>
+                    <i data-lucide="settings"></i>
                 </button>
             </nav>
         </header>
@@ -60,7 +61,7 @@
                     <div class="studio-health-banner" id="studio-health-banner">
                         <div class="health-banner-top">
                             <div class="health-banner-title">
-                                <i class="fa-solid fa-heart-pulse health-pulse-icon"></i>
+                                <i data-lucide="activity" class="health-pulse-icon"></i>
                                 <span data-i18n="dashboard.projectHealthTitle">Project Health</span>
                             </div>
                             <div class="health-status-badge healthy" id="dash-health-badge">
@@ -70,22 +71,22 @@
                         </div>
                         <div class="dash-quick-metrics">
                             <div class="dash-metric-pill tooltipped tooltip-bottom" id="dash-pill-comps" data-tooltip="Compositions" data-i18n-tooltip="stats.tipComps">
-                                <i class="fa-solid fa-layer-group" style="color: #ba68c8;"></i>
+                                <i data-lucide="layers" style="color: #ba68c8;"></i>
                                 <span class="metric-val" id="dash-stat-comps">0</span>
                                 <span class="metric-lbl" data-i18n="stats.labelComps">Comps</span>
                             </div>
                             <div class="dash-metric-pill tooltipped tooltip-bottom" id="dash-pill-total" data-tooltip="Total Project Items" data-i18n-tooltip="stats.tipTotal">
-                                <i class="fa-solid fa-boxes-stacked" style="color: #00bcd4;"></i>
+                                <i data-lucide="boxes" style="color: #00bcd4;"></i>
                                 <span class="metric-val" id="dash-stat-total">0</span>
                                 <span class="metric-lbl" data-i18n="stats.labelTotal">Assets</span>
                             </div>
                             <div class="dash-metric-pill tooltipped tooltip-bottom" id="dash-pill-missing" data-tooltip="Missing / Offline Assets" data-i18n-tooltip="stats.tipOffline">
-                                <i class="fa-solid fa-triangle-exclamation" style="color: #ff9800;"></i>
+                                <i data-lucide="alert-triangle" style="color: #ff9800;"></i>
                                 <span class="metric-val" id="dash-stat-missing">0</span>
                                 <span class="metric-lbl" data-i18n="stats.labelOffline">Offline</span>
                             </div>
                             <div class="dash-metric-pill tooltipped tooltip-bottom" id="dash-pill-unused" data-tooltip="Unused Assets" data-i18n-tooltip="stats.sectionUnused">
-                                <i class="fa-solid fa-box-archive" style="color: #4CAF50;"></i>
+                                <i data-lucide="archive" style="color: #4CAF50;"></i>
                                 <span class="metric-val" id="dash-stat-unused">0</span>
                                 <span class="metric-lbl" data-i18n="stats.sectionUnused">Unused</span>
                             </div>
@@ -94,92 +95,92 @@
 
                     <!-- Quick Action Tools Hub (Superpowers) -->
                     <div class="studio-section-header">
-                        <span class="studio-section-title"><i class="fa-solid fa-bolt-lightning" style="color: var(--accent);"></i> <span data-i18n="dashboard.quickActions">Quick Action Tools</span></span>
+                        <span class="studio-section-title"><i data-lucide="zap" style="color: var(--accent);"></i> <span data-i18n="dashboard.quickActions">Quick Action Tools</span></span>
                     </div>
 
                     <div class="quick-tools-grid">
                         <!-- Tool 1: Asset & Font Auditor -->
                         <div class="studio-card" id="card-tool-auditor">
-                            <div class="studio-card-icon auditor-color"><i class="fa-solid fa-microscope"></i></div>
+                            <div class="studio-card-icon auditor-color"><i data-lucide="scan-search"></i></div>
                             <div class="studio-card-info">
                                 <div class="studio-card-title" data-i18n="dashboard.cardAuditorTitle">Asset & Font Auditor</div>
                                 <div class="studio-card-desc" data-i18n="dashboard.cardAuditorDesc">Scan missing effects & fonts</div>
                             </div>
                             <button class="studio-card-btn tooltipped tooltip-bottom" id="dash-btn-auditor" data-tooltip="Scan Project Assets" data-i18n-tooltip="smart.btnRunAuditor">
-                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                                <i data-lucide="bar-chart-2"></i>
                             </button>
                         </div>
 
                         <!-- Tool 2: Comp Tree & Batch Renamer -->
                         <div class="studio-card" id="card-tool-comptree">
-                            <div class="studio-card-icon tree-color"><i class="fa-solid fa-sitemap"></i></div>
+                            <div class="studio-card-icon tree-color"><i data-lucide="folder-tree"></i></div>
                             <div class="studio-card-info">
                                 <div class="studio-card-title" data-i18n="dashboard.cardTreeTitle">Comp Tree & Renamer</div>
                                 <div class="studio-card-desc" data-i18n="dashboard.cardTreeDesc">Comp hierarchy & bulk rename</div>
                             </div>
                             <button class="studio-card-btn tooltipped tooltip-bottom" id="dash-btn-comptree" data-tooltip="Open Composition Tree" data-i18n-tooltip="tabs.compTreeTooltip">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <i data-lucide="external-link"></i>
                             </button>
                         </div>
 
                         <!-- Tool 3: Proxy Studio -->
                         <div class="studio-card" id="card-tool-proxy">
-                            <div class="studio-card-icon proxy-color"><i class="fa-solid fa-bolt"></i></div>
+                            <div class="studio-card-icon proxy-color"><i data-lucide="zap"></i></div>
                             <div class="studio-card-info">
                                 <div class="studio-card-title" data-i18n="dashboard.cardProxyTitle">Proxy Studio</div>
                                 <div class="studio-card-desc" data-i18n="dashboard.cardProxyDesc">ProRes & H.264 proxy engine</div>
                             </div>
                             <button class="studio-card-btn tooltipped tooltip-bottom" id="dash-btn-proxy" data-tooltip="Open Proxy Studio" data-i18n-tooltip="smart.btnOpenProxyManager">
-                                <i class="fa-solid fa-film"></i>
+                                <i data-lucide="film"></i>
                             </button>
                         </div>
 
                         <!-- Tool 4: Orphan Cleaner -->
                         <div class="studio-card" id="card-tool-orphans">
-                            <div class="studio-card-icon orphan-color"><i class="fa-solid fa-trash-can"></i></div>
+                            <div class="studio-card-icon orphan-color"><i data-lucide="trash-2"></i></div>
                             <div class="studio-card-info">
                                 <div class="studio-card-title" data-i18n="dashboard.cardOrphanTitle">Orphan Cleaner</div>
                                 <div class="studio-card-desc" data-i18n="dashboard.cardOrphanDesc">Clean unreferenced pre-comps</div>
                             </div>
                             <button class="studio-card-btn tooltipped tooltip-bottom" id="dash-btn-orphans" data-tooltip="Analyze Orphans" data-i18n-tooltip="smart.btnRunOrphanScan">
-                                <i class="fa-solid fa-broom"></i>
+                                <i data-lucide="sparkles"></i>
                             </button>
                         </div>
 
                         <!-- Tool 5: Smart Relink -->
                         <div class="studio-card" id="card-tool-relink">
-                            <div class="studio-card-icon relink-color"><i class="fa-solid fa-link"></i></div>
+                            <div class="studio-card-icon relink-color"><i data-lucide="link-2"></i></div>
                             <div class="studio-card-info">
                                 <div class="studio-card-title" data-i18n="dashboard.cardRelinkTitle">Auto-Relink Media</div>
                                 <div class="studio-card-desc" data-i18n="dashboard.cardRelinkDesc">Reconnect offline footage</div>
                             </div>
                             <button class="studio-card-btn tooltipped tooltip-bottom" id="dash-btn-relink" data-tooltip="Auto Relink Media" data-i18n-tooltip="smart.btnRunRelink">
-                                <i class="fa-solid fa-arrows-rotate"></i>
+                                <i data-lucide="rotate-cw"></i>
                             </button>
                         </div>
 
                         <!-- Tool 6: Collect & Archive -->
                         <div class="studio-card" id="card-tool-collect">
-                            <div class="studio-card-icon collect-color"><i class="fa-solid fa-boxes-packing"></i></div>
+                            <div class="studio-card-icon collect-color"><i data-lucide="package"></i></div>
                             <div class="studio-card-info">
                                 <div class="studio-card-title" data-i18n="dashboard.cardCollectTitle">Collect & Archive</div>
                                 <div class="studio-card-desc" data-i18n="dashboard.cardCollectDesc">Bundle active assets & save AEP</div>
                             </div>
                             <button class="studio-card-btn tooltipped tooltip-bottom" id="dash-btn-collect" data-tooltip="Collect Project Assets" data-i18n-tooltip="smart.btnRunCollect">
-                                <i class="fa-solid fa-download"></i>
+                                <i data-lucide="download"></i>
                             </button>
                         </div>
                     </div>
 
                     <!-- Smart Ingest & Organization Section -->
                     <div class="studio-section-header" style="margin-top: 6px;">
-                        <span class="studio-section-title"><i class="fa-solid fa-cloud-arrow-up" style="color: #4CAF50;"></i> <span data-i18n="dashboard.quickSortTitle">Smart Ingest & Organization</span></span>
+                        <span class="studio-section-title"><i data-lucide="cloud-upload" style="color: #4CAF50;"></i> <span data-i18n="dashboard.quickSortTitle">Smart Ingest & Organization</span></span>
                     </div>
 
                     <!-- Drop Zone -->
                     <div id="dropzone" class="dropzone studio-dropzone tooltipped" data-tooltip="Drag & Drop files or Click to Browse" data-i18n-tooltip="ingest.dropzoneTooltip">
                         <div class="dropzone-content">
-                            <div class="dropzone-icon"><i class="fa-solid fa-photo-film"></i></div>
+                            <div class="dropzone-icon"><i data-lucide="image"></i></div>
                             <div class="dropzone-text" data-i18n="ingest.dropTitle">Drop media here</div>
                             <div class="dropzone-subtext" data-i18n="ingest.dropSubtitle">or click to browse</div>
                         </div>
@@ -194,15 +195,15 @@
                     <!-- Instant Project Sort Action Strip -->
                     <div class="quick-sort-strip">
                         <button class="quick-sort-btn tooltipped tooltip-bottom" id="dash-sort-ae" data-tooltip="Sort inside After Effects bins only" data-i18n-tooltip="sort.sortAeOnlyTooltip">
-                            <i class="fa-solid fa-clapperboard"></i>
+                            <i data-lucide="clapperboard"></i>
                             <span data-i18n="dashboard.sortAeBtn">Sort AE Bins</span>
                         </button>
                         <button class="quick-sort-btn tooltipped tooltip-bottom" id="dash-sort-os-ae" data-tooltip="Move on OS and sort inside After Effects" data-i18n-tooltip="sort.sortOsAeTooltip">
-                            <i class="fa-solid fa-folder-tree"></i>
+                            <i data-lucide="folder-tree"></i>
                             <span data-i18n="dashboard.sortOsAeBtn">Sort OS & AE</span>
                         </button>
                         <button class="quick-sort-btn primary tooltipped tooltip-bottom" id="dash-sort-comps" data-tooltip="Organize Compositions Hierarchy" data-i18n-tooltip="sort.sortCompsTooltip">
-                            <i class="fa-solid fa-diagram-project"></i>
+                            <i data-lucide="git-fork"></i>
                             <span data-i18n="dashboard.sortCompsBtn">Sort Comps</span>
                         </button>
                     </div>
@@ -218,10 +219,10 @@
                         <div class="toolbar-label" data-i18n="sort.footageSortLabel">Footage Sort</div>
                         <div class="toolbar-buttons">
                             <button class="square-btn tooltipped tooltip-bottom" id="sort-ae-only" data-action="sort-ae" data-tooltip="Sort inside After Effects bins only" data-i18n-tooltip="sort.sortAeOnlyTooltip">
-                                <i class="fa-solid fa-clapperboard"></i>
+                                <i data-lucide="clapperboard"></i>
                             </button>
                             <button class="square-btn tooltipped tooltip-bottom" id="sort-os-ae" data-action="sort-os-ae" data-tooltip="Move on OS and sort inside After Effects" data-i18n-tooltip="sort.sortOsAeTooltip">
-                                <i class="fa-solid fa-folder-tree"></i>
+                                <i data-lucide="folder-tree"></i>
                             </button>
                         </div>
                     </div>
@@ -230,7 +231,7 @@
                         <div class="toolbar-label" data-i18n="sort.compsLabel">Compositions</div>
                         <div class="toolbar-buttons">
                             <button class="square-btn primary tooltipped tooltip-bottom" id="sort-comps" data-action="sort-comps" data-tooltip="Organize Compositions Hierarchy" data-i18n-tooltip="sort.sortCompsTooltip">
-                                <i class="fa-solid fa-diagram-project"></i>
+                                <i data-lucide="git-fork"></i>
                             </button>
                         </div>
                     </div>
@@ -240,23 +241,23 @@
                 <div class="sort-preset-preview-card">
                     <div class="sort-preset-header">
                         <div class="sort-preset-title">
-                            <i class="fa-solid fa-folder-tree" style="color: var(--accent);"></i>
+                            <i data-lucide="folder-tree" style="color: var(--accent);"></i>
                             <span data-i18n="dashboard.presetStructureTitle">Active Bin Organization Structure</span>
                         </div>
                         <button class="settings-btn secondary" id="sort-btn-edit-presets" style="font-size: 10px; padding: 3px 8px;">
-                            <i class="fa-solid fa-gear"></i> <span data-i18n="dashboard.editInSettings">Edit in Settings</span>
+                            <i data-lucide="settings"></i> <span data-i18n="dashboard.editInSettings">Edit in Settings</span>
                         </button>
                     </div>
                     <p style="font-size: 11px; color: var(--text-secondary); margin: 6px 0 10px;" data-i18n="dashboard.presetStructureDesc">
                         Imported and unorganized assets will be routed to these bins:
                     </p>
                     <div class="sort-bins-grid" id="sort-active-bins-grid">
-                        <div class="sort-bin-pill"><i class="fa-solid fa-film" style="color: #00AAFF;"></i> <span>Video:</span> <strong id="sort-bin-video">_media/Video</strong></div>
-                        <div class="sort-bin-pill"><i class="fa-solid fa-image" style="color: #4CAF50;"></i> <span>Images:</span> <strong id="sort-bin-image">_media/Images</strong></div>
-                        <div class="sort-bin-pill"><i class="fa-solid fa-music" style="color: #FF9800;"></i> <span>Audio:</span> <strong id="sort-bin-audio">_media/Audio</strong></div>
-                        <div class="sort-bin-pill"><i class="fa-solid fa-diagram-project" style="color: #9C27B0;"></i> <span>Comps:</span> <strong id="sort-bin-comps">Compositions</strong></div>
-                        <div class="sort-bin-pill"><i class="fa-solid fa-layer-group" style="color: #00BCD4;"></i> <span>Sequences:</span> <strong id="sort-bin-sequence">_media/Sequences</strong></div>
-                        <div class="sort-bin-pill"><i class="fa-solid fa-shapes" style="color: #E91E63;"></i> <span>Solids:</span> <strong id="sort-bin-solid">_media/Solids</strong></div>
+                        <div class="sort-bin-pill"><i data-lucide="film" style="color: #00AAFF;"></i> <span>Video:</span> <strong id="sort-bin-video">_media/Video</strong></div>
+                        <div class="sort-bin-pill"><i data-lucide="image" style="color: #4CAF50;"></i> <span>Images:</span> <strong id="sort-bin-image">_media/Images</strong></div>
+                        <div class="sort-bin-pill"><i data-lucide="music" style="color: #FF9800;"></i> <span>Audio:</span> <strong id="sort-bin-audio">_media/Audio</strong></div>
+                        <div class="sort-bin-pill"><i data-lucide="git-fork" style="color: #9C27B0;"></i> <span>Comps:</span> <strong id="sort-bin-comps">Compositions</strong></div>
+                        <div class="sort-bin-pill"><i data-lucide="layers" style="color: #00BCD4;"></i> <span>Sequences:</span> <strong id="sort-bin-sequence">_media/Sequences</strong></div>
+                        <div class="sort-bin-pill"><i data-lucide="shapes" style="color: #E91E63;"></i> <span>Solids:</span> <strong id="sort-bin-solid">_media/Solids</strong></div>
                     </div>
                 </div>
 
@@ -267,14 +268,14 @@
                 <div class="stats-header">
                     <span class="stats-title" data-i18n="stats.overview">Project Overview</span>
                     <button class="icon-btn tooltipped tooltip-bottom" id="refresh-stats" data-tooltip="Refresh Statistics" data-i18n-tooltip="stats.refreshTooltip">
-                        <i class="fa-solid fa-arrows-rotate"></i>
+                        <i data-lucide="rotate-cw"></i>
                     </button>
                 </div>
 
                 <div class="stats-chart-wrapper">
                     <div class="stats-chart" id="stats-chart">
                         <div class="stats-chart-inner">
-                            <i class="fa-solid fa-chart-pie"></i>
+                            <i data-lucide="pie-chart"></i>
                         </div>
                     </div>
                 </div>
@@ -282,7 +283,7 @@
                 <!-- ====== Project Health Score ====== -->
                 <div class="health-widget" id="health-widget" style="display: none;">
                     <div class="health-header">
-                        <span class="health-label"><i class="fa-solid fa-heart-pulse"></i> <span data-i18n="stats.projectHealth">Project Health</span></span>
+                        <span class="health-label"><i data-lucide="activity"></i> <span data-i18n="stats.projectHealth">Project Health</span></span>
                         <span class="health-score-value" id="health-score-value">—</span>
                     </div>
                     <div class="health-bar-track">
@@ -295,7 +296,7 @@
 
                 <div class="stats-list">
                     <div class="stat-row tooltipped" data-tooltip="Video Files" data-i18n-tooltip="stats.tipVideo">
-                        <div class="stat-row-icon"><i class="fa-solid fa-video"></i></div>
+                        <div class="stat-row-icon"><i data-lucide="video"></i></div>
                         <div class="stat-row-label" data-i18n="stats.labelVideo">Video</div>
                         <div class="stat-row-right">
                             <span class="stat-value" id="stat-video">—</span>
@@ -303,7 +304,7 @@
                         </div>
                     </div>
                     <div class="stat-row tooltipped" data-tooltip="Image Files" data-i18n-tooltip="stats.tipImages">
-                        <div class="stat-row-icon"><i class="fa-solid fa-image"></i></div>
+                        <div class="stat-row-icon"><i data-lucide="image"></i></div>
                         <div class="stat-row-label" data-i18n="stats.labelImages">Images</div>
                         <div class="stat-row-right">
                             <span class="stat-value" id="stat-image">—</span>
@@ -311,7 +312,7 @@
                         </div>
                     </div>
                     <div class="stat-row tooltipped" data-tooltip="Audio Files" data-i18n-tooltip="stats.tipAudio">
-                        <div class="stat-row-icon"><i class="fa-solid fa-volume-high"></i></div>
+                        <div class="stat-row-icon"><i data-lucide="volume-2"></i></div>
                         <div class="stat-row-label" data-i18n="stats.labelAudio">Audio</div>
                         <div class="stat-row-right">
                             <span class="stat-value" id="stat-audio">—</span>
@@ -319,28 +320,28 @@
                         </div>
                     </div>
                     <div class="stat-row tooltipped" data-tooltip="Compositions" data-i18n-tooltip="stats.tipComps">
-                        <div class="stat-row-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <div class="stat-row-icon"><i data-lucide="layers"></i></div>
                         <div class="stat-row-label" data-i18n="stats.labelComps">Comps</div>
                         <div class="stat-row-right">
                             <span class="stat-value" id="stat-comp">—</span>
                         </div>
                     </div>
                     <div class="stat-row warning tooltipped" data-tooltip="Missing / Offline Assets" data-i18n-tooltip="stats.tipOffline">
-                        <div class="stat-row-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <div class="stat-row-icon"><i data-lucide="alert-triangle"></i></div>
                         <div class="stat-row-label" data-i18n="stats.labelOffline">Offline</div>
                         <div class="stat-row-right">
                             <span class="stat-value" id="stat-missing">—</span>
                         </div>
                     </div>
                     <div class="stat-row tooltipped" data-tooltip="Total Project Items" data-i18n-tooltip="stats.tipTotal">
-                        <div class="stat-row-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                        <div class="stat-row-icon"><i data-lucide="boxes"></i></div>
                         <div class="stat-row-label" data-i18n="stats.labelTotal">Total</div>
                         <div class="stat-row-right">
                             <span class="stat-value" id="stat-total">—</span>
                         </div>
                     </div>
                     <div class="stat-row tooltipped" data-tooltip="Total Project Size on Disk" data-i18n-tooltip="stats.tipSize">
-                        <div class="stat-row-icon"><i class="fa-solid fa-hard-drive"></i></div>
+                        <div class="stat-row-icon"><i data-lucide="hard-drive"></i></div>
                         <div class="stat-row-label" data-i18n="stats.labelSize">Size</div>
                         <div class="stat-row-right">
                             <span class="stat-value stat-value-size" id="stat-size">—</span>
@@ -351,7 +352,7 @@
                 <!-- ====== Missing Media List Section ====== -->
                 <div class="stats-section" id="missing-media-container" style="display: none; margin-top: 20px;">
                     <div class="stats-section-header">
-                        <i class="fa-solid fa-link-slash icon-warning"></i> <span data-i18n="stats.sectionOffline">Offline Media</span>
+                        <i data-lucide="unlink" class="icon-warning"></i> <span data-i18n="stats.sectionOffline">Offline Media</span>
                         <span class="badge" id="missing-media-count">0</span>
                     </div>
                     <div class="missing-media-list" id="missing-media-list">
@@ -362,7 +363,7 @@
                 <!-- ====== Unused Media List Section ====== -->
                 <div class="stats-section" id="unused-media-container" style="display: none; margin-top: 12px;">
                     <div class="stats-section-header">
-                        <i class="fa-solid fa-box-archive icon-info"></i> <span data-i18n="stats.sectionUnused">Unused Media</span>
+                        <i data-lucide="archive" class="icon-info"></i> <span data-i18n="stats.sectionUnused">Unused Media</span>
                         <span class="badge" id="unused-media-count">0</span>
                     </div>
                     <div class="missing-media-list" id="unused-media-list">
@@ -380,7 +381,7 @@
                         </div>
                         <div class="toolbar-buttons">
                             <button class="square-btn tooltipped" id="btn-isolate-missing" data-tooltip="Isolate Offline/Missing Media" data-i18n-tooltip="smart.btnIsolateMissingTooltip">
-                                <i class="fa-solid fa-link-slash"></i>
+                                <i data-lucide="unlink"></i>
                             </button>
                         </div>
                     </div>
@@ -390,10 +391,10 @@
                         </div>
                         <div class="toolbar-buttons">
                             <button class="square-btn tooltipped" id="btn-isolate-unused" data-tooltip="Isolate Unused Media into a Bin" data-i18n-tooltip="smart.btnIsolateUnusedTooltip">
-                                <i class="fa-solid fa-box-archive"></i>
+                                <i data-lucide="archive"></i>
                             </button>
                             <button class="square-btn danger tooltipped" id="btn-remove-unused" data-tooltip="Remove Unused Media (Irreversible)" data-i18n-tooltip="smart.btnRemoveUnusedTooltip">
-                                <i class="fa-solid fa-trash-can"></i>
+                                <i data-lucide="trash-2"></i>
                             </button>
                         </div>
                     </div>
@@ -402,7 +403,7 @@
                         <div class="toolbar-label" data-i18n="smart.toolbarSystem">System</div>
                         <div class="toolbar-buttons">
                             <button class="square-btn tooltipped tooltip-bottom" id="btn-purge-cache" data-tooltip="Purge All Memory & Disk Caches" data-i18n-tooltip="smart.btnPurgeCacheTooltip">
-                                <i class="fa-solid fa-broom"></i>
+                                <i data-lucide="sparkles"></i>
                             </button>
                         </div>
                     </div>
@@ -415,22 +416,22 @@
                     <div class="smart-card">
                         <div class="smart-card-header">
                             <div class="smart-card-title">
-                                <i class="fa-solid fa-microscope" style="color: var(--accent);"></i>
+                                <i data-lucide="scan-search" style="color: var(--accent);"></i>
                                 <span data-i18n="smart.cardAuditorTitle">Asset & Font Auditor</span>
                             </div>
                             <div class="smart-badges-group">
-                                <span class="comp-badge badge-warning" id="smart-badge-effects"><i class="fa-solid fa-triangle-exclamation"></i> 0 Missing Effects</span>
-                                <span class="comp-badge badge-warning" id="smart-badge-fonts"><i class="fa-solid fa-font"></i> 0 Missing Fonts</span>
+                                <span class="comp-badge badge-warning" id="smart-badge-effects"><i data-lucide="alert-triangle"></i> 0 Missing Effects</span>
+                                <span class="comp-badge badge-warning" id="smart-badge-fonts"><i data-lucide="type"></i> 0 Missing Fonts</span>
                             </div>
                         </div>
                         <div class="smart-card-body">
                             <p class="smart-card-desc" data-i18n="smart.cardAuditorDesc">Comprehensive scan across all comps and layers to identify missing 3rd-party effects and uninstalled fonts with instant one-click layer reveal in AE.</p>
                             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
                                 <button class="settings-btn primary" id="btn-run-auditor">
-                                    <i class="fa-solid fa-magnifying-glass-chart"></i> <span data-i18n="smart.btnRunAuditor">Scan Project Assets</span>
+                                    <i data-lucide="bar-chart-2"></i> <span data-i18n="smart.btnRunAuditor">Scan Project Assets</span>
                                 </button>
                                 <button class="settings-btn secondary" id="btn-view-audit-report" disabled>
-                                    <i class="fa-solid fa-table-list"></i> <span data-i18n="smart.btnViewAuditReport">Open Full Report</span>
+                                    <i data-lucide="table"></i> <span data-i18n="smart.btnViewAuditReport">Open Full Report</span>
                                 </button>
                             </div>
                         </div>
@@ -440,7 +441,7 @@
                     <div class="smart-card">
                         <div class="smart-card-header">
                             <div class="smart-card-title">
-                                <i class="fa-solid fa-sitemap" style="color: #ba68c8;"></i>
+                                <i data-lucide="folder-tree" style="color: #ba68c8;"></i>
                                 <span data-i18n="smart.cardOrphanTitle">Deep Dependency & Orphan Cleaner</span>
                             </div>
                             <div class="smart-badges-group">
@@ -453,13 +454,13 @@
                             <p class="smart-card-desc" data-i18n="smart.cardOrphanDesc">Analyzes usage chains to identify abandoned pre-comps (orphans) and empty comps unlinked to render queue to speed up your project.</p>
                             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
                                 <button class="settings-btn secondary" id="btn-run-orphan-scan">
-                                    <i class="fa-solid fa-network-wired"></i> <span data-i18n="smart.btnRunOrphanScan">Analyze Dependencies</span>
+                                    <i data-lucide="network"></i> <span data-i18n="smart.btnRunOrphanScan">Analyze Dependencies</span>
                                 </button>
                                 <button class="settings-btn secondary" id="btn-isolate-orphans-action" disabled>
-                                    <i class="fa-solid fa-box-archive"></i> <span data-i18n="smart.btnIsolateOrphans">Isolate Orphans to Bin</span>
+                                    <i data-lucide="archive"></i> <span data-i18n="smart.btnIsolateOrphans">Isolate Orphans to Bin</span>
                                 </button>
                                 <button class="settings-btn danger" id="btn-clean-orphans-action" disabled>
-                                    <i class="fa-solid fa-trash-can"></i> <span data-i18n="smart.btnCleanOrphans">Remove Selected Orphans</span>
+                                    <i data-lucide="trash-2"></i> <span data-i18n="smart.btnCleanOrphans">Remove Selected Orphans</span>
                                 </button>
                             </div>
                         </div>
@@ -469,7 +470,7 @@
                     <div class="smart-card">
                         <div class="smart-card-header">
                             <div class="smart-card-title">
-                                <i class="fa-solid fa-link" style="color: #4CAF50;"></i>
+                                <i data-lucide="link-2" style="color: #4CAF50;"></i>
                                 <span data-i18n="smart.cardRelinkTitle">Smart Auto-Relink Media</span>
                             </div>
                             <span class="comp-badge badge-warning" id="smart-badge-missing-files">0 Missing Files</span>
@@ -479,7 +480,7 @@
                             <div style="display: flex; gap: 8px; margin-bottom: 8px;">
                                 <input type="text" id="smart-relink-folder-input" class="settings-input" placeholder="Select search folder..." data-i18n-placeholder="smart.relinkFolderPlaceholder" style="flex: 1;" />
                                 <button class="settings-btn secondary" id="smart-relink-browse-btn" style="white-space: nowrap;">
-                                    <i class="fa-solid fa-folder-open"></i> <span data-i18n="common.browse">Browse...</span>
+                                    <i data-lucide="folder-open"></i> <span data-i18n="common.browse">Browse...</span>
                                 </button>
                             </div>
                             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
@@ -488,7 +489,7 @@
                                     <span data-i18n="smart.relinkRecursive">Recursive Subfolder Search</span>
                                 </label>
                                 <button class="settings-btn primary" id="btn-execute-relink">
-                                    <i class="fa-solid fa-arrows-rotate"></i> <span data-i18n="smart.btnRunRelink">Start Auto-Relink</span>
+                                    <i data-lucide="rotate-cw"></i> <span data-i18n="smart.btnRunRelink">Start Auto-Relink</span>
                                 </button>
                             </div>
                             <div id="smart-relink-result-msg" style="display: none; margin-top: 8px; font-size: 11px; padding: 6px 10px; border-radius: 4px;"></div>
@@ -499,7 +500,7 @@
                     <div class="smart-card">
                         <div class="smart-card-header">
                             <div class="smart-card-title">
-                                <i class="fa-solid fa-boxes-packing" style="color: #FFB300;"></i>
+                                <i data-lucide="package" style="color: #FFB300;"></i>
                                 <span data-i18n="smart.cardCollectTitle">Smart Media Consolidate & Collect</span>
                             </div>
                         </div>
@@ -508,7 +509,7 @@
                             <div style="display: flex; gap: 8px; margin-bottom: 8px;">
                                 <input type="text" id="smart-collect-folder-input" class="settings-input" placeholder="Select collection folder..." data-i18n-placeholder="smart.collectFolderPlaceholder" style="flex: 1;" />
                                 <button class="settings-btn secondary" id="smart-collect-browse-btn" style="white-space: nowrap;">
-                                    <i class="fa-solid fa-folder-open"></i> <span data-i18n="common.browse">Browse...</span>
+                                    <i data-lucide="folder-open"></i> <span data-i18n="common.browse">Browse...</span>
                                 </button>
                             </div>
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px; font-size: 11px; color: var(--text-secondary);">
@@ -530,7 +531,7 @@
                                 </label>
                             </div>
                             <button class="settings-btn primary" id="btn-execute-collect" style="width: 100%;">
-                                <i class="fa-solid fa-download"></i> <span data-i18n="smart.btnRunCollect">Collect Project Assets Now</span>
+                                <i data-lucide="download"></i> <span data-i18n="smart.btnRunCollect">Collect Project Assets Now</span>
                             </button>
                             <div id="smart-collect-result-msg" style="display: none; margin-top: 8px; font-size: 11px; padding: 6px 10px; border-radius: 4px;"></div>
                         </div>
@@ -540,16 +541,16 @@
                     <div class="smart-card">
                         <div class="smart-card-header">
                             <div class="smart-card-title">
-                                <i class="fa-solid fa-bolt" style="color: #00bcd4;"></i>
+                                <i data-lucide="zap" style="color: #00bcd4;"></i>
                                 <span data-i18n="smart.cardProxyTitle">Proxy & Transcode Engine</span>
                             </div>
-                            <span class="comp-badge badge-root" id="ffmpeg-status-badge"><i class="fa-solid fa-circle-check"></i> <span data-i18n="smart.badgeFfmpegReady">FFmpeg Ready</span></span>
+                            <span class="comp-badge badge-root" id="ffmpeg-status-badge"><i data-lucide="check-circle-2"></i> <span data-i18n="smart.badgeFfmpegReady">FFmpeg Ready</span></span>
                         </div>
                         <div class="smart-card-body">
                             <p class="smart-card-desc" data-i18n="smart.cardProxyDesc">Generate ultra-smooth ProRes Proxy or lightweight H.264 720p files for heavy 4K/8K/H.265 footage and automatically attach them as native AE proxies.</p>
                             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
                                 <button class="settings-btn primary" id="btn-open-proxy-manager">
-                                    <i class="fa-solid fa-film"></i> <span data-i18n="smart.btnOpenProxyManager">Open Proxy Studio</span>
+                                    <i data-lucide="film"></i> <span data-i18n="smart.btnOpenProxyManager">Open Proxy Studio</span>
                                 </button>
                             </div>
                         </div>
@@ -563,19 +564,19 @@
                     <!-- Settings Sub-tabs -->
                     <div class="settings-sub-tabs" id="settings-tabs">
                         <button class="settings-sub-tab active tooltipped tooltip-bottom" data-tab="import" data-tooltip="Import Settings" data-i18n-tooltip="settings.subtabImportTooltip">
-                            <i class="fa-solid fa-file-import"></i>
+                            <i data-lucide="file-input"></i>
                         </button>
                         <button class="settings-sub-tab tooltipped tooltip-bottom" data-tab="organization" data-tooltip="Organization Rules" data-i18n-tooltip="settings.subtabOrgTooltip">
-                            <i class="fa-solid fa-folder-open"></i>
+                            <i data-lucide="folder-open"></i>
                         </button>
                         <button class="settings-sub-tab tooltipped tooltip-bottom" data-tab="files" data-tooltip="File Handling Details" data-i18n-tooltip="settings.subtabFilesTooltip">
-                            <i class="fa-solid fa-file-lines"></i>
+                            <i data-lucide="file-text"></i>
                         </button>
                         <button class="settings-sub-tab tooltipped tooltip-bottom" data-tab="shortcuts" data-tooltip="Keyboard Shortcuts" data-i18n-tooltip="settings.subtabShortcutsTooltip">
-                            <i class="fa-solid fa-keyboard"></i>
+                            <i data-lucide="keyboard"></i>
                         </button>
                         <button class="settings-sub-tab tooltipped tooltip-bottom" data-tab="about" data-tooltip="About Extension" data-i18n-tooltip="settings.subtabAboutTooltip">
-                            <i class="fa-solid fa-circle-info"></i>
+                            <i data-lucide="info"></i>
                         </button>
                     </div>
 
@@ -583,7 +584,7 @@
                         <!-- Sub-Tab 1: Import Settings -->
                         <div class="settings-tab-pane active" id="tab-import">
                             <div class="settings-row" style="margin-bottom: 14px; background: rgba(255,255,255,0.03); padding: 8px 10px; border-radius: 4px; border: 1px solid var(--border-idle);">
-                                <label class="settings-label" data-i18n="settings.languageSelectLabel" style="font-size: 11.5px; font-weight: bold;"><i class="fa-solid fa-globe"></i> Interface Language:</label>
+                                <label class="settings-label" data-i18n="settings.languageSelectLabel" style="font-size: 11.5px; font-weight: bold;"><i data-lucide="globe"></i> Interface Language:</label>
                                 <select id="settings-language-select" class="settings-select" style="margin-top: 4px;">
                                     <!-- Populated dynamically -->
                                 </select>
@@ -640,7 +641,7 @@
                             </div>
 
                             <div class="settings-divider"></div>
-                            <div class="settings-section-title"><i class="fa-solid fa-folder-tree"></i> <span data-i18n="settings.folderPresetsTitle">Folder Structure Presets</span></div>
+                            <div class="settings-section-title"><i data-lucide="folder-tree"></i> <span data-i18n="settings.folderPresetsTitle">Folder Structure Presets</span></div>
                             <div class="settings-row">
                                 <label class="settings-label" data-i18n="settings.activePreset">Active Preset</label>
                                 <div style="display: flex; gap: 8px;">
@@ -648,10 +649,10 @@
                                         <!-- populated dynamically by JS -->
                                     </select>
                                     <button type="button" id="btn-preset-save-new" class="settings-btn secondary tooltipped" data-tooltip="Save as New Preset" data-i18n-tooltip="settings.saveNewPreset">
-                                        <i class="fa-solid fa-plus"></i>
+                                        <i data-lucide="plus"></i>
                                     </button>
                                     <button type="button" id="btn-preset-delete" class="settings-btn danger tooltipped" data-tooltip="Delete Preset" data-i18n-tooltip="settings.deletePreset">
-                                        <i class="fa-solid fa-trash"></i>
+                                        <i data-lucide="trash-2"></i>
                                     </button>
                                 </div>
                             </div>
@@ -659,27 +660,27 @@
                             <!-- Mappings Grid -->
                             <div class="preset-mappings-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 6px; border: 1px solid var(--border-idle);">
                                 <div>
-                                    <label class="settings-label" style="font-size: 11px;"><i class="fa-solid fa-film"></i> <span data-i18n="settings.binVideo">Video:</span></label>
+                                    <label class="settings-label" style="font-size: 11px;"><i data-lucide="film"></i> <span data-i18n="settings.binVideo">Video:</span></label>
                                     <input type="text" id="preset-folder-video" class="settings-input" style="font-size: 11px; padding: 4px 6px;" />
                                 </div>
                                 <div>
-                                    <label class="settings-label" style="font-size: 11px;"><i class="fa-solid fa-diagram-project"></i> <span data-i18n="settings.binComps">Comps:</span></label>
+                                    <label class="settings-label" style="font-size: 11px;"><i data-lucide="git-fork"></i> <span data-i18n="settings.binComps">Comps:</span></label>
                                     <input type="text" id="preset-folder-comps" class="settings-input" style="font-size: 11px; padding: 4px 6px;" />
                                 </div>
                                 <div>
-                                    <label class="settings-label" style="font-size: 11px;"><i class="fa-solid fa-music"></i> <span data-i18n="settings.binAudio">Audio:</span></label>
+                                    <label class="settings-label" style="font-size: 11px;"><i data-lucide="music"></i> <span data-i18n="settings.binAudio">Audio:</span></label>
                                     <input type="text" id="preset-folder-audio" class="settings-input" style="font-size: 11px; padding: 4px 6px;" />
                                 </div>
                                 <div>
-                                    <label class="settings-label" style="font-size: 11px;"><i class="fa-solid fa-image"></i> <span data-i18n="settings.binImages">Images:</span></label>
+                                    <label class="settings-label" style="font-size: 11px;"><i data-lucide="image"></i> <span data-i18n="settings.binImages">Images:</span></label>
                                     <input type="text" id="preset-folder-image" class="settings-input" style="font-size: 11px; padding: 4px 6px;" />
                                 </div>
                                 <div>
-                                    <label class="settings-label" style="font-size: 11px;"><i class="fa-solid fa-layer-group"></i> <span data-i18n="settings.binSequences">Sequences:</span></label>
+                                    <label class="settings-label" style="font-size: 11px;"><i data-lucide="layers"></i> <span data-i18n="settings.binSequences">Sequences:</span></label>
                                     <input type="text" id="preset-folder-sequence" class="settings-input" style="font-size: 11px; padding: 4px 6px;" />
                                 </div>
                                 <div>
-                                    <label class="settings-label" style="font-size: 11px;"><i class="fa-solid fa-shapes"></i> <span data-i18n="settings.binSolids">Solids:</span></label>
+                                    <label class="settings-label" style="font-size: 11px;"><i data-lucide="shapes"></i> <span data-i18n="settings.binSolids">Solids:</span></label>
                                     <input type="text" id="preset-folder-solid" class="settings-input" style="font-size: 11px; padding: 4px 6px;" />
                                 </div>
                             </div>
@@ -687,10 +688,10 @@
                             <!-- Export / Import Buttons -->
                             <div style="display: flex; gap: 8px; margin-top: 8px; justify-content: flex-end;">
                                 <button type="button" id="btn-preset-export" class="settings-btn secondary" style="font-size: 11px; padding: 3px 8px;">
-                                    <i class="fa-solid fa-file-export"></i> <span data-i18n="settings.btnExportPresets">Export JSON</span>
+                                    <i data-lucide="file-output"></i> <span data-i18n="settings.btnExportPresets">Export JSON</span>
                                 </button>
                                 <button type="button" id="btn-preset-import" class="settings-btn secondary" style="font-size: 11px; padding: 3px 8px;">
-                                    <i class="fa-solid fa-file-import"></i> <span data-i18n="settings.btnImportPresets">Import JSON</span>
+                                    <i data-lucide="file-input"></i> <span data-i18n="settings.btnImportPresets">Import JSON</span>
                                 </button>
                                 <input type="file" id="preset-import-file" accept=".json" style="display: none;" />
                             </div>
@@ -769,7 +770,7 @@
                         <!-- Sub-Tab 5: About Settings -->
                         <div class="settings-tab-pane" id="tab-about">
                             <div style="text-align: center; margin-top: 20px;">
-                                <i class="fa-solid fa-layer-group"
+                                <i data-lucide="layers"
                                     style="font-size: 32px; color: var(--accent); margin-bottom: 12px;"></i>
                                 <h3 style="margin: 0; font-size: 16px; color: var(--text-primary);" data-i18n="about.appTitle">MediaFlow Manager</h3>
                                 <p style="margin: 4px 0 16px; font-size: 12px; color: var(--text-muted);" data-i18n="about.version">Version 1.0.0</p>
@@ -784,10 +785,10 @@
 
                     <div class="settings-footer">
                         <button id="settings-reset" class="settings-btn secondary" style="margin-right: auto;">
-                            <i class="fa-solid fa-rotate-left"></i> <span data-i18n="settings.btnReset">Reset</span>
+                            <i data-lucide="rotate-ccw"></i> <span data-i18n="settings.btnReset">Reset</span>
                         </button>
                         <button id="settings-save" class="settings-btn primary">
-                            <i class="fa-solid fa-floppy-disk"></i> <span data-i18n="settings.btnSave">Save</span>
+                            <i data-lucide="save"></i> <span data-i18n="settings.btnSave">Save</span>
                         </button>
                     </div>
                 </div>
@@ -797,38 +798,38 @@
         <div class="tab-pane" id="pane-comptree">
             <div class="comp-tree-toolbar">
                 <div class="search-box">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i data-lucide="search"></i>
                     <input type="text" id="comp-tree-search" placeholder="Search compositions..." data-i18n-placeholder="compTree.searchPlaceholder" />
                 </div>
                 <div class="toolbar-actions">
                     <div class="select-mode-radios" style="display:flex; align-items:center; gap: 8px; margin-right: 8px; font-size: 11px; color: var(--text-secondary); background: rgba(0,0,0,0.2); padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border-idle);">
                         <label style="cursor: pointer; display: flex; align-items: center; gap: 4px;" title="Select comp and all its children">
                             <input type="radio" name="comp-select-mode" value="recursive" checked style="margin: 0; accent-color: var(--accent); cursor: pointer;">
-                            <i class="fa-solid fa-sitemap" style="font-size: 10px;"></i> <span data-i18n="compTree.selectAll">All</span>
+                            <i data-lucide="folder-tree" style="font-size: 10px;"></i> <span data-i18n="compTree.selectAll">All</span>
                         </label>
                         <label style="cursor: pointer; display: flex; align-items: center; gap: 4px;" title="Select only the clicked comp">
                             <input type="radio" name="comp-select-mode" value="single" style="margin: 0; accent-color: var(--accent); cursor: pointer;">
-                            <i class="fa-solid fa-square-check" style="font-size: 10px;"></i> <span data-i18n="compTree.selectSingle">Single</span>
+                            <i data-lucide="check-square" style="font-size: 10px;"></i> <span data-i18n="compTree.selectSingle">Single</span>
                         </label>
                     </div>
                     <button class="square-btn tooltipped tooltip-bottom disabled" id="btn-comptree-rename" data-tooltip="Batch Rename Selected" data-i18n-tooltip="compTree.btnBatchRenameTooltip" disabled style="color: #4CAF50;">
-                        <i class="fa-solid fa-font"></i>
+                        <i data-lucide="type"></i>
                     </button>
                     <button class="square-btn tooltipped tooltip-bottom disabled" id="btn-comptree-render-selected" data-tooltip="Render Selected Comps" data-i18n-tooltip="compTree.btnRenderQueueTooltip" disabled style="color: var(--accent);">
-                        <i class="fa-solid fa-list-check"></i>
+                        <i data-lucide="list-checks"></i>
                     </button>
                     <button class="square-btn tooltipped tooltip-bottom" id="btn-comptree-refresh" data-tooltip="Refresh Tree" data-i18n-tooltip="compTree.btnRefreshTooltip">
-                        <i class="fa-solid fa-rotate-right"></i>
+                        <i data-lucide="rotate-cw"></i>
                     </button>
                     <button class="square-btn tooltipped tooltip-bottom" id="btn-comptree-expand" data-tooltip="Expand/Collapse All" data-i18n-tooltip="compTree.btnExpandCollapseTooltip">
-                        <i class="fa-solid fa-list"></i>
+                        <i data-lucide="list"></i>
                     </button>
                 </div>
             </div>
 
             <div class="comp-tree-container" id="comp-tree-container">
                 <div class="empty-state">
-                    <i class="fa-solid fa-sitemap" style="font-size: 32px; opacity: 0.5; margin-bottom: 10px;"></i><br>
+                    <i data-lucide="folder-tree" style="font-size: 32px; opacity: 0.5; margin-bottom: 10px;"></i><br>
                     <span data-i18n="compTree.emptyPrompt">Click refresh to load composition tree</span>
                 </div>
             </div>
@@ -836,10 +837,10 @@
             <div class="comp-tree-actions" id="comp-tree-actions" style="display: flex; gap: 8px; align-items: center;">
                 <span id="comp-tree-selected-count">0 Selected</span>
                 <button class="settings-btn secondary disabled" id="btn-comptree-rename-bottom" disabled style="margin-left: auto;">
-                    <i class="fa-solid fa-font"></i> <span data-i18n="compTree.btnRename">Rename</span>
+                    <i data-lucide="type"></i> <span data-i18n="compTree.btnRename">Rename</span>
                 </button>
                 <button class="settings-btn primary disabled" id="btn-comptree-render" disabled>
-                    <i class="fa-solid fa-film"></i> <span data-i18n="compTree.btnRender">Render Queue...</span>
+                    <i data-lucide="film"></i> <span data-i18n="compTree.btnRender">Render Queue...</span>
                 </button>
             </div>
         </div>
@@ -849,12 +850,12 @@
     <!-- Status Log (always visible) -->
     <div class="log-container collapsed" id="log-container">
         <div class="log-header" id="log-header">
-            <span class="log-header-left"><i class="fa-solid fa-terminal"></i> <span data-i18n="logs.activityLog">Activity Log</span></span>
-            <span class="log-header-preview" id="log-header-preview"><i class="fa-solid fa-circle-info"></i> <span data-i18n="logs.readyPrompt">Ready. Drop files to import.</span></span>
-            <i class="fa-solid fa-chevron-up log-toggle-icon"></i>
+            <span class="log-header-left"><i data-lucide="terminal"></i> <span data-i18n="logs.activityLog">Activity Log</span></span>
+            <span class="log-header-preview" id="log-header-preview"><i data-lucide="info"></i> <span data-i18n="logs.readyPrompt">Ready. Drop files to import.</span></span>
+            <i data-lucide="chevron-up" class="log-toggle-icon"></i>
         </div>
         <div id="log" class="log">
-            <div class="log-entry info"><i class="fa-solid fa-circle-info"></i> <span data-i18n="logs.readyPrompt">Ready. Drop files to import.</span></div>
+            <div class="log-entry info"><i data-lucide="info"></i> <span data-i18n="logs.readyPrompt">Ready. Drop files to import.</span></div>
         </div>
         <div id="progress-container" class="progress-container" style="display: none;">
             <div class="progress-header">
@@ -886,7 +887,7 @@
                 <div class="modal-col-preview">
                     <!-- Sequence Detection UI -->
                     <div id="detected-sequences-container" class="sequence-list-container" style="display: none;">
-                        <div class="sequence-list-header"><i class="fa-solid fa-layer-group"></i> <span data-i18n="modals.detectedSequences">Sequences</span></div>
+                        <div class="sequence-list-header"><i data-lucide="layers"></i> <span data-i18n="modals.detectedSequences">Sequences</span></div>
                         <div id="sequence-list" class="sequence-list">
                             <!-- Sequences will be injected here via JS -->
                         </div>
@@ -895,7 +896,7 @@
                     <!-- Generic File Preview -->
                     <div id="import-preview-container" class="sequence-list-container"
                         style="display: none; margin-top: 10px;">
-                        <div class="sequence-list-header"><i class="fa-solid fa-file"></i> <span data-i18n="modals.detectedFiles">Detected Files</span></div>
+                        <div class="sequence-list-header"><i data-lucide="file"></i> <span data-i18n="modals.detectedFiles">Detected Files</span></div>
                         <div id="import-preview-list" class="sequence-list">
                             <!-- Standard files injected here via JS -->
                         </div>
@@ -904,7 +905,7 @@
                     <!-- Invalid / Unsupported File Preview -->
                     <div id="invalid-preview-container" class="sequence-list-container"
                         style="display: none; margin-top: 10px; border-color: rgba(255, 68, 68, 0.3);">
-                        <div class="sequence-list-header" style="color: #ff4444;"><i class="fa-solid fa-triangle-exclamation"></i> <span data-i18n="modals.unsupportedMedia">Unsupported Media (Auto-Isolated)</span></div>
+                        <div class="sequence-list-header" style="color: #ff4444;"><i data-lucide="alert-triangle"></i> <span data-i18n="modals.unsupportedMedia">Unsupported Media (Auto-Isolated)</span></div>
                         <div id="invalid-preview-list" class="sequence-list" style="background: rgba(255, 68, 68, 0.05);">
                             <!-- Invalid files injected here via JS -->
                         </div>
@@ -915,13 +916,13 @@
                 <div class="modal-col-actions">
                     <div class="modal-buttons">
                         <button class="mode-btn" data-mode="copy">
-                            <span class="mode-icon"><i class="fa-solid fa-copy"></i></span>
+                            <span class="mode-icon"><i data-lucide="copy"></i></span>
                             <span class="mode-label" data-i18n="modals.copyToProject">Copy to Project</span>
                             <span class="mode-sublabel" data-i18n="modals.copyDesc">Copy files & organize</span>
                             <span class="mode-shortcut">[C]</span>
                         </button>
                         <button class="mode-btn" data-mode="link">
-                            <span class="mode-icon"><i class="fa-solid fa-link"></i></span>
+                            <span class="mode-icon"><i data-lucide="link-2"></i></span>
                             <span class="mode-label" data-i18n="modals.linkOriginal">Link Original</span>
                             <span class="mode-sublabel" data-i18n="modals.linkDesc">Import link & organize</span>
                             <span class="mode-shortcut">[L]</span>
@@ -933,7 +934,7 @@
                         <label class="structure-mode-option">
                             <input type="checkbox" id="toggle-structure-mode" checked class="structure-mode-checkbox" />
                             <div class="structure-mode-content">
-                                <span class="structure-mode-label"><i class="fa-solid fa-folder-tree structure-mode-icon"></i> <span data-i18n="modals.rebuildTree">Rebuild Tree</span></span>
+                                <span class="structure-mode-label"><i data-lucide="folder-tree" class="structure-mode-icon"></i> <span data-i18n="modals.rebuildTree">Rebuild Tree</span></span>
                                 <span class="structure-mode-caption" data-i18n="modals.rebuildTreeDesc">Recreate dropped folders as Bins</span>
                             </div>
                         </label>
@@ -944,7 +945,7 @@
                         <label class="structure-mode-option" style="cursor: default; padding-bottom: 0;">
                             <div class="structure-mode-content">
                                 <span class="structure-mode-label" style="color: #FF9800;">
-                                    <i class="fa-solid fa-copy structure-mode-icon"></i> <span data-i18n="modals.duplicateDetected">Duplicate Files Detected</span>
+                                    <i data-lucide="copy" class="structure-mode-icon"></i> <span data-i18n="modals.duplicateDetected">Duplicate Files Detected</span>
                                 </span>
                                 <span class="structure-mode-caption" data-i18n="modals.duplicateDesc">Choose how to handle files that already exist:</span>
                             </div>
@@ -979,7 +980,7 @@
                 <p style="margin-top: 0;"><span data-i18n="modals.deleteMsgPrefix">The following</span> <span id="delete-confirm-count">0</span> <span data-i18n="modals.deleteMsgSuffix">items will be permanently removed:</span></p>
                 
                 <div style="background: rgba(244, 67, 54, 0.1); border-left: 3px solid #F44336; padding: 10px; margin-bottom: 15px; border-radius: 4px; font-size: 11.5px; line-height: 1.4;">
-                    <strong style="color: #F44336;"><i class="fa-solid fa-triangle-exclamation"></i> <span data-i18n="common.warning">Warning:</span></strong> 
+                    <strong style="color: #F44336;"><i data-lucide="alert-triangle"></i> <span data-i18n="common.warning">Warning:</span></strong> 
                     <span data-i18n="modals.deleteWarningDesc">Items used exclusively as Expression References inside non-rendered pre-comps might appear here. Please double check the list before confirming!</span>
                 </div>
 
@@ -1028,7 +1029,7 @@
         <div class="modal-backdrop"></div>
         <div class="modal-content" style="max-width: 580px; max-height: 85vh; flex-direction: column;">
             <div class="modal-header">
-                <strong><i class="fa-solid fa-font"></i> Smart Batch Renamer</strong>
+                <strong><i data-lucide="type"></i> Smart Batch Renamer</strong>
                 <span class="badge" id="rename-items-count" style="margin-left: 8px; font-size: 11px; background: var(--accent); color: #000; padding: 2px 6px; border-radius: 10px;">0</span>
             </div>
             <div class="modal-body" style="padding: 16px; overflow-y: auto;">
@@ -1069,7 +1070,7 @@
 
                 <!-- Find & Replace Section -->
                 <div style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 6px; border: 1px solid var(--border-idle); margin-bottom: 14px;">
-                    <div style="font-size: 11px; font-weight: bold; margin-bottom: 8px; color: var(--text-secondary);"><i class="fa-solid fa-magnifying-glass"></i> <span data-i18n="modals.findReplace">Find & Replace:</span></div>
+                    <div style="font-size: 11px; font-weight: bold; margin-bottom: 8px; color: var(--text-secondary);"><i data-lucide="search"></i> <span data-i18n="modals.findReplace">Find & Replace:</span></div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px;">
                         <input type="text" id="rename-find" class="settings-input" placeholder="Find text..." data-i18n-placeholder="modals.findPlaceholder" />
                         <input type="text" id="rename-replace" class="settings-input" placeholder="Replace with..." data-i18n-placeholder="modals.replacePlaceholder" />
@@ -1086,7 +1087,7 @@
 
                 <!-- Live Preview Section -->
                 <div>
-                    <div style="font-size: 11px; font-weight: bold; margin-bottom: 6px; color: var(--text-secondary);"><i class="fa-solid fa-eye"></i> <span data-i18n="modals.livePreview">Live Preview:</span></div>
+                    <div style="font-size: 11px; font-weight: bold; margin-bottom: 6px; color: var(--text-secondary);"><i data-lucide="eye"></i> <span data-i18n="modals.livePreview">Live Preview:</span></div>
                     <div id="rename-preview-list" class="rename-preview-container" style="max-height: 180px; overflow-y: auto; background: rgba(0,0,0,0.3); border: 1px solid var(--border-idle); border-radius: 4px; padding: 6px;">
                         <!-- Injected dynamically -->
                     </div>
@@ -1094,7 +1095,7 @@
             </div>
             <div class="modal-footer" style="justify-content: flex-end; gap: 10px;">
                 <button class="settings-btn secondary" id="rename-cancel-btn" data-i18n="common.cancel">Cancel</button>
-                <button class="settings-btn primary" id="rename-apply-btn"><i class="fa-solid fa-check"></i> <span data-i18n="modals.btnApplyRename">Apply Rename</span></button>
+                <button class="settings-btn primary" id="rename-apply-btn"><i data-lucide="check"></i> <span data-i18n="modals.btnApplyRename">Apply Rename</span></button>
             </div>
         </div>
     </div>
@@ -1104,7 +1105,7 @@
         <div class="modal-backdrop"></div>
         <div class="modal-content" style="max-width: 480px; flex-direction: column;">
             <div class="modal-header">
-                <strong><i class="fa-solid fa-film"></i> Render Queue Options</strong>
+                <strong><i data-lucide="film"></i> Render Queue Options</strong>
                 <span class="badge" id="render-comp-count-badge" style="margin-left: 8px; font-size: 11px; background: var(--accent); color: #000; padding: 2px 6px; border-radius: 10px;">0</span>
             </div>
             <div class="modal-body" style="padding: 16px;">
@@ -1129,7 +1130,7 @@
 
                 <div class="settings-row" style="margin-bottom: 0;">
                     <label class="settings-toggle-label">
-                        <span class="toggle-text"><i class="fa-solid fa-play" style="color: #4CAF50;"></i> <span data-i18n="modals.startImmediately">Start Render Immediately in After Effects</span></span>
+                        <span class="toggle-text"><i data-lucide="play" style="color: #4CAF50;"></i> <span data-i18n="modals.startImmediately">Start Render Immediately in After Effects</span></span>
                         <label class="toggle-switch">
                             <input type="checkbox" id="render-start-immediately" class="toggle-input" />
                             <span class="toggle-slider"></span>
@@ -1139,7 +1140,7 @@
             </div>
             <div class="modal-footer" style="justify-content: flex-end; gap: 10px;">
                 <button class="settings-btn secondary" id="render-modal-cancel-btn" data-i18n="common.cancel">Cancel</button>
-                <button class="settings-btn primary" id="render-modal-confirm-btn"><i class="fa-solid fa-paper-plane"></i> <span data-i18n="modals.btnSendRender">Send to Render Queue</span></button>
+                <button class="settings-btn primary" id="render-modal-confirm-btn"><i data-lucide="send"></i> <span data-i18n="modals.btnSendRender">Send to Render Queue</span></button>
             </div>
         </div>
     </div>
@@ -1167,25 +1168,25 @@
         <div class="modal-content" style="max-width: 720px; max-height: 85vh; flex-direction: column;">
             <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center;">
                 <div style="display: flex; align-items: center; gap: 8px;">
-                    <i class="fa-solid fa-microscope" style="color: var(--accent);"></i>
+                    <i data-lucide="scan-search" style="color: var(--accent);"></i>
                     <strong><span data-i18n="modals.auditorTitle">Project Asset & Font Auditor Report</span></strong>
                 </div>
-                <button class="square-btn" id="auditor-modal-close-top"><i class="fa-solid fa-xmark"></i></button>
+                <button class="square-btn" id="auditor-modal-close-top"><i data-lucide="x"></i></button>
             </div>
             <div class="modal-body" style="padding: 12px; display: flex; flex-direction: column; overflow: hidden; height: 450px;">
                 <!-- Auditor Sub-tabs -->
                 <div style="display: flex; gap: 6px; border-bottom: 1px solid var(--border-idle); padding-bottom: 8px; margin-bottom: 10px; flex-shrink: 0;">
                     <button class="settings-btn auditor-subtab-btn active" data-tab="auditor-tab-effects">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i> <span data-i18n="modals.subtabMissingEffects">Missing Effects</span> (<span id="auditor-tab-effects-count">0</span>)
+                        <i data-lucide="wand-2"></i> <span data-i18n="modals.subtabMissingEffects">Missing Effects</span> (<span id="auditor-tab-effects-count">0</span>)
                     </button>
                     <button class="settings-btn auditor-subtab-btn secondary" data-tab="auditor-tab-fonts">
-                        <i class="fa-solid fa-font"></i> <span data-i18n="modals.subtabMissingFonts">Missing Fonts</span> (<span id="auditor-tab-fonts-count">0</span>)
+                        <i data-lucide="type"></i> <span data-i18n="modals.subtabMissingFonts">Missing Fonts</span> (<span id="auditor-tab-fonts-count">0</span>)
                     </button>
                     <button class="settings-btn auditor-subtab-btn secondary" data-tab="auditor-tab-all-fonts">
-                        <i class="fa-solid fa-list-check"></i> <span data-i18n="modals.subtabAllFonts">All Project Fonts</span> (<span id="auditor-tab-all-fonts-count">0</span>)
+                        <i data-lucide="list-checks"></i> <span data-i18n="modals.subtabAllFonts">All Project Fonts</span> (<span id="auditor-tab-all-fonts-count">0</span>)
                     </button>
                     <button class="settings-btn auditor-subtab-btn secondary" data-tab="auditor-tab-all-effects">
-                        <i class="fa-solid fa-puzzle-piece"></i> <span data-i18n="modals.subtabAllEffects">All Project Effects</span> (<span id="auditor-tab-all-effects-count">0</span>)
+                        <i data-lucide="puzzle"></i> <span data-i18n="modals.subtabAllEffects">All Project Effects</span> (<span id="auditor-tab-all-effects-count">0</span>)
                     </button>
                 </div>
                 <!-- Tab Panels -->
@@ -1215,25 +1216,25 @@
         <div class="modal-content" style="max-width: 600px; max-height: 85vh; flex-direction: column;">
             <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center;">
                 <div style="display: flex; align-items: center; gap: 8px;">
-                    <i class="fa-solid fa-sitemap" style="color: #ba68c8;"></i>
+                    <i data-lucide="folder-tree" style="color: #ba68c8;"></i>
                     <strong><span data-i18n="modals.orphanTitle">Orphan Hierarchy & Unused Assets Detail</span></strong>
                 </div>
-                <button class="square-btn" id="orphan-modal-close-top"><i class="fa-solid fa-xmark"></i></button>
+                <button class="square-btn" id="orphan-modal-close-top"><i data-lucide="x"></i></button>
             </div>
             <div class="modal-body" style="padding: 14px; overflow-y: auto; height: 400px;">
                 <div style="margin-bottom: 8px; font-size: 12px; font-weight: bold; color: var(--text-secondary);">
-                    <i class="fa-solid fa-folder-tree"></i> <span data-i18n="modals.orphanCompsLabel">Unreferenced & Empty Compositions:</span>
+                    <i data-lucide="folder-tree"></i> <span data-i18n="modals.orphanCompsLabel">Unreferenced & Empty Compositions:</span>
                 </div>
                 <div id="orphan-comps-list" class="rename-preview-container" style="max-height: 200px; overflow-y: auto; margin-bottom: 14px;"></div>
                 <div style="margin-bottom: 8px; font-size: 12px; font-weight: bold; color: var(--text-secondary);">
-                    <i class="fa-solid fa-film"></i> <span data-i18n="modals.orphanFootageLabel">Unreferenced Media Files:</span>
+                    <i data-lucide="film"></i> <span data-i18n="modals.orphanFootageLabel">Unreferenced Media Files:</span>
                 </div>
                 <div id="orphan-footage-list" class="rename-preview-container" style="max-height: 150px; overflow-y: auto;"></div>
             </div>
             <div class="modal-footer" style="justify-content: flex-end; gap: 10px;">
                 <button class="settings-btn secondary" id="orphan-modal-cancel-btn" data-i18n="common.cancel">Cancel</button>
-                <button class="settings-btn secondary" id="orphan-modal-isolate-btn"><i class="fa-solid fa-box-archive"></i> <span data-i18n="modals.btnIsolateFolder">Isolate to Folder</span></button>
-                <button class="settings-btn danger" id="orphan-modal-delete-btn"><i class="fa-solid fa-trash-can"></i> <span data-i18n="modals.btnDeleteSelected">Delete Selected</span></button>
+                <button class="settings-btn secondary" id="orphan-modal-isolate-btn"><i data-lucide="archive"></i> <span data-i18n="modals.btnIsolateFolder">Isolate to Folder</span></button>
+                <button class="settings-btn danger" id="orphan-modal-delete-btn"><i data-lucide="trash-2"></i> <span data-i18n="modals.btnDeleteSelected">Delete Selected</span></button>
             </div>
         </div>
     </div>
@@ -1244,10 +1245,10 @@
         <div class="modal-content" style="max-width: 680px; max-height: 85vh; flex-direction: column;">
             <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center;">
                 <div style="display: flex; align-items: center; gap: 8px;">
-                    <i class="fa-solid fa-bolt" style="color: #00bcd4;"></i>
+                    <i data-lucide="zap" style="color: #00bcd4;"></i>
                     <strong><span data-i18n="modals.proxyTitle">Proxy & Transcode Studio</span></strong>
                 </div>
-                <button class="square-btn" id="proxy-modal-close-top"><i class="fa-solid fa-xmark"></i></button>
+                <button class="square-btn" id="proxy-modal-close-top"><i data-lucide="x"></i></button>
             </div>
             <div class="modal-body" style="padding: 14px; overflow-y: auto; height: 420px; display: flex; flex-direction: column; gap: 12px;">
                 
@@ -1268,7 +1269,7 @@
                         <label class="settings-label" style="font-size: 11px;" data-i18n="modals.proxyFolderLabel">Proxy Output Directory:</label>
                         <div style="display: flex; gap: 6px;">
                             <input type="text" id="proxy-output-folder" class="settings-input" placeholder="Default: _proxies folder next to footage" data-i18n-placeholder="modals.proxyFolderPlaceholder" style="flex: 1;" />
-                            <button class="settings-btn secondary" id="proxy-browse-folder-btn"><i class="fa-solid fa-folder-open"></i></button>
+                            <button class="settings-btn secondary" id="proxy-browse-folder-btn"><i data-lucide="folder-open"></i></button>
                         </div>
                     </div>
                 </div>
@@ -1276,18 +1277,18 @@
                 <!-- Auto Attach Toggle -->
                 <label style="cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--text-secondary); background: rgba(0, 188, 212, 0.08); padding: 8px 12px; border-radius: 4px; border: 1px solid rgba(0, 188, 212, 0.2);">
                     <input type="checkbox" id="proxy-auto-attach" checked style="accent-color: #00bcd4;" />
-                    <span><i class="fa-solid fa-link"></i> <span data-i18n="modals.autoAttachLabel">Auto-Attach generated files as native AE Proxies upon completion</span></span>
+                    <span><i data-lucide="link-2"></i> <span data-i18n="modals.autoAttachLabel">Auto-Attach generated files as native AE Proxies upon completion</span></span>
                 </label>
 
                 <!-- Footage Selection List -->
                 <div style="flex: 1; display: flex; flex-direction: column;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
                         <span style="font-size: 11px; font-weight: bold; color: var(--text-secondary);">
-                            <i class="fa-solid fa-video"></i> <span data-i18n="modals.footageSelectLabel">Select Video Footage for Proxy Generation:</span>
+                            <i data-lucide="video"></i> <span data-i18n="modals.footageSelectLabel">Select Video Footage for Proxy Generation:</span>
                         </span>
                         <div style="display: flex; gap: 8px;">
                             <button class="settings-btn secondary" id="proxy-select-all-btn" style="padding: 2px 8px; font-size: 10px;" data-i18n="common.selectAll">Select All</button>
-                            <button class="settings-btn secondary" id="proxy-refresh-list-btn" style="padding: 2px 8px; font-size: 10px;"><i class="fa-solid fa-arrows-rotate"></i> <span data-i18n="common.refresh">Refresh</span></button>
+                            <button class="settings-btn secondary" id="proxy-refresh-list-btn" style="padding: 2px 8px; font-size: 10px;"><i data-lucide="rotate-cw"></i> <span data-i18n="common.refresh">Refresh</span></button>
                         </div>
                     </div>
                     <div id="proxy-footage-list" class="rename-preview-container" style="flex: 1; min-height: 140px; max-height: 200px; overflow-y: auto;">
@@ -1313,8 +1314,8 @@
             </div>
             <div class="modal-footer" style="justify-content: flex-end; gap: 10px;">
                 <button class="settings-btn secondary" id="proxy-modal-cancel-btn" data-i18n="common.close">Close</button>
-                <button class="settings-btn danger" id="proxy-stop-btn" style="display: none;"><i class="fa-solid fa-stop"></i> <span data-i18n="modals.btnStopTranscode">Stop</span></button>
-                <button class="settings-btn primary" id="proxy-start-btn"><i class="fa-solid fa-play"></i> <span data-i18n="modals.btnStartTranscode">Start Transcoding</span></button>
+                <button class="settings-btn danger" id="proxy-stop-btn" style="display: none;"><i data-lucide="square"></i> <span data-i18n="modals.btnStopTranscode">Stop</span></button>
+                <button class="settings-btn primary" id="proxy-start-btn"><i data-lucide="play"></i> <span data-i18n="modals.btnStartTranscode">Start Transcoding</span></button>
             </div>
         </div>
     </div>

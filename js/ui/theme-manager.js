@@ -92,13 +92,12 @@ var ThemeManager = (function () {
                 root.classList.add('theme-light');
             }
 
-            // System highlight color from AE (e.g. blue / cyan accent)
-            if (skin.systemHighlightColor) {
-                var accentHex = toHex(skin.systemHighlightColor.color);
-                if (accentHex && accentHex !== '#000000') {
-                    root.style.setProperty('--accent', accentHex);
-                }
-            }
+            // Signature OpenGeo Precision Emerald Palette
+            root.style.setProperty('--accent-default', '#10b981');
+            root.style.setProperty('--accent', '#10b981');
+            root.style.setProperty('--accent-hover', '#34d399');
+            root.style.setProperty('--accent-active', '#059669');
+            root.style.setProperty('--border-color', borderIdleHex);
 
             console.log('[ThemeManager] Theme synchronized: ' + (isDark ? 'Dark' : 'Light') + ' (' + bgPanelHex + ')');
         } catch (e) {

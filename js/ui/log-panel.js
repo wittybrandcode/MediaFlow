@@ -54,10 +54,10 @@ var LogPanel = (function () {
             entry.setAttribute('data-time', getTimestamp());
 
             const icons = {
-                success: '<i class="fa-solid fa-circle-check"></i>',
-                warning: '<i class="fa-solid fa-triangle-exclamation"></i>',
-                error: '<i class="fa-solid fa-circle-xmark"></i>',
-                info: '<i class="fa-solid fa-circle-info"></i>'
+                success: '<i data-lucide="check-circle-2"></i>',
+                warning: '<i data-lucide="alert-triangle"></i>',
+                error: '<i data-lucide="x-circle"></i>',
+                info: '<i data-lucide="info"></i>'
             };
 
             entry.innerHTML = icons[type] + ' ' + message;
@@ -70,6 +70,10 @@ var LogPanel = (function () {
             if (previewEl) {
                 previewEl.className = 'log-header-preview ' + type;
                 previewEl.innerHTML = icons[type] + ' <span>' + message + '</span>';
+            }
+
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
             }
 
             // Auto expand log if it's an error

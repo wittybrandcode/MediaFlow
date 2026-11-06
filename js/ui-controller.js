@@ -790,16 +790,17 @@ const UIController = (function () {
                 var icon = '';
                 var cls = '';
                 switch (d.type) {
-                    case 'error': icon = '<i class="fa-solid fa-circle-xmark"></i>'; cls = 'diag-error'; break;
-                    case 'warning': icon = '<i class="fa-solid fa-triangle-exclamation"></i>'; cls = 'diag-warning'; break;
-                    case 'success': icon = '<i class="fa-solid fa-circle-check"></i>'; cls = 'diag-success'; break;
-                    default: icon = '<i class="fa-solid fa-circle-info"></i>'; cls = 'diag-info'; break;
+                    case 'error': icon = '<i data-lucide="x-circle"></i>'; cls = 'diag-error'; break;
+                    case 'warning': icon = '<i data-lucide="alert-triangle"></i>'; cls = 'diag-warning'; break;
+                    case 'success': icon = '<i data-lucide="check-circle-2"></i>'; cls = 'diag-success'; break;
+                    default: icon = '<i data-lucide="info"></i>'; cls = 'diag-info'; break;
                 }
                 var div = document.createElement('div');
                 div.className = 'diag-item ' + cls;
                 div.innerHTML = icon + ' ' + d.message;
                 diagnosisEl.appendChild(div);
             }
+            if (typeof lucide !== 'undefined') lucide.createIcons();
         }
     };
 })();

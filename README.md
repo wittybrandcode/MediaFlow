@@ -3,6 +3,8 @@
 [![Adobe CEP 9.0+](https://img.shields.io/badge/Adobe%20CEP-9.0%2B-blue.svg)](https://github.com/Adobe-CEP)
 [![After Effects](https://img.shields.io/badge/After%20Effects-CC%202019%2B-9999FF.svg)](https://www.adobe.com/products/aftereffects.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Design System: OpenGeo Architectural](https://img.shields.io/badge/Design%20System-OpenGeo%20Architectural-10b981.svg)](#-design-system--opengeo-aesthetic)
+[![Icons: Lucide](https://img.shields.io/badge/Icons-Lucide%20Vector-10b981.svg)](https://lucide.dev)
 [![i18n Supported](https://img.shields.io/badge/i18n-English%20%7C%20العربية-orange.svg)](#-internationalization--bilingual-engine)
 
 > **MediaFlow Pro** is an enterprise-grade studio media management and automation panel for **Adobe After Effects**. It transforms project asset organization, composition hierarchy management, batch renaming, missing asset auditing, proxy generation, and archival into a seamless, unified workflow.

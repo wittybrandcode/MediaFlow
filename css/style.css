@@ -3191,3 +3191,408 @@ html[dir="rtl"] .log-header-left span i {
     margin-right: 0;
     margin-left: 5px;
 }
+
+
+/* ==========================================================================
+   OPENGEO DESIGN SYSTEM INTEGRATION FOR MEDIAFLOW
+   Architectural Precision, Zero Border-Radius, Lucide Vector Iconography
+   ========================================================================== */
+
+/* 1. Global Zero Radius Enforcer */
+button, input, select, textarea, .badge, .comp-badge, .modal-content, 
+.studio-card, .studio-dropzone, .quick-sort-btn, .square-btn, .settings-btn, 
+.dash-metric-pill, .sort-bin-pill, .toolbar-group, .health-status-badge, 
+.token-chip, .auditor-table-container, .rename-preview-container, 
+.lang-dropdown-menu, .lang-dropdown-btn, .sequence-list-container {
+    border-radius: 0px !important;
+}
+
+/* 2. Lucide Icons Precision Rules */
+svg.lucide, .lucide {
+    width: var(--icon-size, 16px);
+    height: var(--icon-size, 16px);
+    stroke-width: 1.75px;
+    stroke: currentColor;
+    fill: none;
+    vertical-align: middle;
+    display: inline-block;
+    flex-shrink: 0;
+    transition: transform 0.12s ease, stroke 0.12s ease;
+}
+
+.tab-btn svg.lucide {
+    width: 16px;
+    height: 16px;
+}
+
+.toolbar-btn svg.lucide, .square-btn svg.lucide {
+    width: 14px;
+    height: 14px;
+}
+
+.studio-card-icon svg.lucide {
+    width: 16px;
+    height: 16px;
+}
+
+.quick-sort-btn svg.lucide, .bottom-btn svg.lucide {
+    width: 13px;
+    height: 13px;
+}
+
+.settings-btn svg.lucide, .btn-copy-path svg.lucide {
+    width: 13px;
+    height: 13px;
+}
+
+/* 3. Header & Brand Title (OpenGeo Metallic Emerald Gradient) */
+.header {
+    height: 34px;
+    min-height: 34px;
+    background: var(--bg-toolbar);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 10px;
+}
+
+.header-title {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: #ffffff;
+    line-height: 1;
+    display: inline-block;
+    background: linear-gradient(135deg, #ffffff 40%, #6ee7b7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Header Language Switcher */
+.lang-dropdown-btn {
+    height: 22px;
+    padding: 0 6px;
+    background: var(--bg-input) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 0px !important;
+    color: var(--text-secondary) !important;
+    font-size: 10.5px;
+    gap: 4px;
+}
+
+.lang-dropdown-btn:hover {
+    background: var(--bg-hover) !important;
+    border-color: var(--border-focus) !important;
+    color: var(--text-primary) !important;
+}
+
+.lang-dropdown-menu {
+    background: var(--bg-dropdown) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 0px !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7) !important;
+}
+
+.lang-dropdown-item {
+    padding: 6px 10px !important;
+    border-radius: 0px !important;
+    font-size: 11px !important;
+}
+
+.lang-dropdown-item:hover {
+    background: var(--bg-hover) !important;
+    color: var(--accent-default) !important;
+}
+
+.lang-dropdown-item.active {
+    background: var(--accent-subtle) !important;
+    color: var(--accent-default) !important;
+    font-weight: 600;
+}
+
+/* 4. Tab Navigation Bar */
+.tab-btn {
+    border-radius: 0px !important;
+    color: var(--text-secondary);
+    padding: 6px 10px;
+    border-bottom: 2px solid transparent !important;
+}
+
+.tab-btn:hover {
+    color: var(--text-primary);
+    background: var(--bg-hover);
+}
+
+.tab-btn.active {
+    color: var(--accent-default) !important;
+    border-bottom: 2px solid var(--accent-default) !important;
+    background: transparent !important;
+}
+
+/* 5. Buttons Architecture (Sovereign Primary & Sharp Secondary) */
+.settings-btn, .square-btn, .action-btn {
+    border-radius: 0px !important;
+    font-family: var(--font-ui);
+    transition: all 0.12s ease;
+}
+
+/* Primary Sovereign Button */
+.settings-btn.primary, .square-btn.primary, .sovereign-btn, #rename-apply-btn, #btn-execute-relink, #btn-execute-collect, #proxy-start-btn {
+    background: var(--accent-default) !important;
+    color: #121212 !important;
+    font-weight: 700 !important;
+    border: 1px solid var(--accent-hover) !important;
+    box-shadow: none !important;
+    letter-spacing: 0.3px;
+}
+
+.settings-btn.primary:hover, .square-btn.primary:hover, .sovereign-btn:hover, #rename-apply-btn:hover, #btn-execute-relink:hover, #btn-execute-collect:hover, #proxy-start-btn:hover {
+    background: var(--accent-hover) !important;
+    color: #121212 !important;
+    border-color: #6ee7b7 !important;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3) !important;
+}
+
+.settings-btn.primary:active, .square-btn.primary:active {
+    background: var(--accent-active) !important;
+    transform: translateY(1px);
+}
+
+/* Secondary Button */
+.settings-btn.secondary, .settings-btn.default, .square-btn {
+    background: var(--bg-input) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+.settings-btn.secondary:hover, .settings-btn.default:hover, .square-btn:hover {
+    background: var(--bg-hover) !important;
+    border-color: var(--border-focus) !important;
+    color: #ffffff !important;
+}
+
+/* Danger Button */
+.settings-btn.danger, .square-btn.danger {
+    background: #c63f48 !important;
+    border: 1px solid #dc525b !important;
+    color: #ffffff !important;
+}
+
+.settings-btn.danger:hover, .square-btn.danger:hover {
+    background: #dc525b !important;
+    border-color: #ef4444 !important;
+}
+
+/* 6. Studio Command Hub Cards (Technical Sharp Aesthetic) */
+.studio-card {
+    background: var(--bg-toolbar) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 0px !important;
+    padding: 7px 9px !important;
+}
+
+.studio-card:hover {
+    background: var(--bg-input) !important;
+    border-color: var(--accent-default) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+}
+
+.studio-card-icon {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    border-radius: 0px !important;
+    border: 1px solid currentColor !important;
+}
+
+.auditor-color { background: rgba(16, 185, 129, 0.1) !important; color: #10b981 !important; }
+.tree-color    { background: rgba(52, 211, 153, 0.1) !important; color: #34d399 !important; }
+.proxy-color   { background: rgba(0, 188, 212, 0.1) !important; color: #00bcd4 !important; }
+.orphan-color  { background: rgba(239, 68, 68, 0.1) !important; color: #ef4444 !important; }
+.relink-color  { background: rgba(245, 158, 11, 0.1) !important; color: #f59e0b !important; }
+.collect-color { background: rgba(234, 179, 8, 0.1) !important; color: #eab308 !important; }
+
+.studio-card-btn {
+    border-radius: 0px !important;
+    background: var(--bg-input) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-secondary) !important;
+}
+
+.studio-card-btn:hover {
+    background: var(--accent-default) !important;
+    color: #121212 !important;
+    border-color: var(--accent-hover) !important;
+}
+
+/* 7. Health Banner & Metric Pills */
+.studio-health-banner {
+    background: var(--bg-toolbar) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 0px !important;
+}
+
+.health-status-badge {
+    border-radius: 0px !important;
+    font-size: 10px !important;
+    padding: 2px 7px !important;
+}
+
+.health-status-badge.healthy {
+    background: rgba(16, 185, 129, 0.12) !important;
+    color: #10b981 !important;
+    border: 1px solid rgba(16, 185, 129, 0.35) !important;
+}
+
+.health-status-badge.warning {
+    background: rgba(245, 158, 11, 0.12) !important;
+    color: #f59e0b !important;
+    border: 1px solid rgba(245, 158, 11, 0.35) !important;
+}
+
+.health-status-badge.critical {
+    background: rgba(239, 68, 68, 0.15) !important;
+    color: #ef4444 !important;
+    border: 1px solid rgba(239, 68, 68, 0.4) !important;
+}
+
+.status-dot {
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 0px !important;
+}
+
+.dash-metric-pill {
+    background: var(--bg-canvas) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 0px !important;
+    padding: 4px 6px !important;
+}
+
+.dash-metric-pill:hover {
+    background: var(--bg-hover) !important;
+    border-color: var(--border-focus) !important;
+}
+
+/* 8. Technical Dropzone & Segmented Quick Sort Strip */
+.studio-dropzone {
+    border-radius: 0px !important;
+    border: 1px dashed var(--border-color) !important;
+    background: var(--bg-canvas) !important;
+}
+
+.studio-dropzone:hover {
+    border-color: var(--accent-default) !important;
+    background: var(--accent-subtle) !important;
+}
+
+.quick-sort-strip {
+    border: 1px solid var(--border-color) !important;
+    background: var(--bg-canvas) !important;
+    gap: 0 !important;
+}
+
+.quick-sort-btn {
+    border: none !important;
+    border-right: 1px solid var(--border-color) !important;
+    border-radius: 0px !important;
+    background: transparent !important;
+    font-size: 10px !important;
+    padding: 6px 8px !important;
+}
+
+.quick-sort-btn:last-child {
+    border-right: none !important;
+}
+
+.quick-sort-btn:hover {
+    background: var(--bg-hover) !important;
+    color: #ffffff !important;
+}
+
+.quick-sort-btn.primary {
+    background: var(--accent-default) !important;
+    color: #121212 !important;
+    font-weight: 700 !important;
+}
+
+.quick-sort-btn.primary:hover {
+    background: var(--accent-hover) !important;
+}
+
+/* 9. OpenGeo Dialog System with 2px Emerald Accent Line */
+.modal-backdrop {
+    background: rgba(0, 0, 0, 0.65) !important;
+    backdrop-filter: blur(4px) !important;
+}
+
+.modal-content {
+    background: var(--bg-panel) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 0px !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-content::before {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, #10b981, #059669 55%, transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.modal-header {
+    background: var(--bg-toolbar) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding: 9px 12px !important;
+}
+
+.modal-footer {
+    background: var(--bg-toolbar) !important;
+    border-top: 1px solid var(--border-color) !important;
+    padding: 9px 12px !important;
+}
+
+/* 10. Form Controls & Inputs */
+input[type="text"], input[type="number"], select, .settings-input, .settings-select {
+    background: var(--bg-canvas) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 0px !important;
+    color: var(--text-primary) !important;
+    height: 26px !important;
+    font-size: 11px !important;
+    outline: none !important;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--accent-default) !important;
+}
+
+/* 11. Activity Log (Technical Console) */
+.log-container {
+    background: var(--bg-panel) !important;
+    border-top: 1px solid var(--border-color) !important;
+}
+
+.log-header {
+    background: var(--bg-toolbar) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    font-size: 10px !important;
+}
+
+/* RTL Support */
+html[dir="rtl"] .quick-sort-btn {
+    border-right: none !important;
+    border-left: 1px solid var(--border-color) !important;
+}
+
+html[dir="rtl"] .quick-sort-btn:last-child {
+    border-left: none !important;
+}

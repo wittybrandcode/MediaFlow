@@ -206,6 +206,7 @@ const CompTreeUI = (function () {
 
         containerElem.innerHTML = '';
         containerElem.appendChild(wrapper);
+        if (typeof lucide !== 'undefined') lucide.createIcons();
     }
 
     /**

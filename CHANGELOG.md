@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0] - 2026-11-06
+
+### OpenGeo Geometric Precision & Lucide Iconography
+- **Zero Border-Radius Architectural Aesthetics:**
+  - Transitioned all buttons, cards, dialogs, inputs, badges, and tabs to strict zero-radius (`0px`) geometric sharpness.
+  - Matches the architectural, technical precision of Adobe After Effects and OpenGeo.
+- **Lucide Icons Vector Engine:**
+  - Replaced FontAwesome solid icons with modern stroke-based Lucide Icons (`libs/lucide.min.js`, 2,000+ vector symbols).
+  - Consistent `1.75px` vector stroke weight and optical alignment across 145+ interface elements.
+- **OpenGeo Technical Emerald & Deep Charcoal Palette:**
+  - Integrated deep matte studio dark tokens (`#181818` panel, `#1f1f1f` toolbars, `#121212` canvas and wells, `#363636` 1px borders).
+  - Signature technical emerald accent (`#10b981` default, `#34d399` hover, `#059669` active).
+  - High-contrast Sovereign Primary buttons (`#10b981` solid fill with `#121212` bold text).
+- **OpenGeo Dialog & Modal System:**
+  - Modernized all modals with a 2px top emerald gradient accent stripe (`linear-gradient(90deg, #10b981, #059669 55%, transparent)`).
+  - Ambient glass blur overlay (`backdrop-filter: blur(4px); background: rgba(0, 0, 0, 0.65)`).
+- **Segmented Controls & Technical Dropzone:**
+  - Seamless joined borders for sort controls with 6px square micro-indicators.
+  - Blueprint-style dashed rectangular ingest zone.
+- **Metallic Emerald Header Title:**
+  - Brand header title with clean metallic emerald gradient (`linear-gradient(135deg, #ffffff 40%, #6ee7b7 100%)`).
+
 ## [2.1.0] - 2026-11-06
 
 ### Modern Studio Dashboard & UI Revolution
